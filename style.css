@@ -22,6 +22,7 @@ html{
 }
 
 body{
+
     font-family:'Inter',sans-serif;
     background:var(--white);
     color:var(--navy);
@@ -73,7 +74,7 @@ nav a{
 
     width:100%;
 
-    padding:20px 40px;
+    padding:5px 40px 20px;
 
     display:grid;
 
@@ -84,15 +85,20 @@ nav a{
     gap:40px;
 }
 
+.hero-content{
+
+    max-width:700px;
+}
+
 .hero-content h1{
 
-    font-size:2rem;
+    font-size:1.6rem;
 
-    line-height:1.05;
+    line-height:1.1;
 
     font-weight:800;
 
-    letter-spacing:-0.03em;
+    letter-spacing:-0.02em;
 
     margin-bottom:12px;
 }
@@ -119,8 +125,6 @@ nav a{
 }
 
 .hero-content p{
-
-    max-width:none;
 
     font-size:0.65rem;
 
@@ -152,19 +156,24 @@ nav a{
         var(--blue),
         var(--green)
     );
+
+    transition:.25s;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
 }
 
 .hero-image{
 
     display:flex;
-
     justify-content:flex-end;
 }
 
 .hero-image img{
 
     width:100%;
-
     max-width:none;
 
     display:block;
@@ -196,7 +205,7 @@ nav a{
 
     .hero-content h1{
 
-        font-size:1.5rem;
+        font-size:1.3rem;
     }
 
     .hero-image{
