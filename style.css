@@ -386,3 +386,208 @@ nav a{
 }
 
 
+/* =======================================================
+   APPROACH
+======================================================= */
+
+.approach-section {
+    width: 100%;
+    padding: 70px 30px;
+}
+
+.approach-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.approach-header h2 {
+    font-size: 2rem;
+    color: #08133d;
+    margin-bottom: 8px;
+}
+
+.approach-header p {
+    font-size: 1rem;
+    color: #5d6888;
+}
+
+.approach-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1fr
+        1fr
+        1.1fr;
+
+    grid-template-areas:
+        "avatar step1 step2 step3 cta"
+        "avatar step4 step5 step6 cta";
+
+    border: 1px solid #e5ebf5;
+    border-radius: 18px;
+    overflow: hidden;
+
+    background: white;
+}
+
+.approach-avatar,
+.approach-card,
+.approach-cta {
+    padding: 30px;
+    border-right: 1px solid #e5ebf5;
+    border-bottom: 1px solid #e5ebf5;
+}
+
+.approach-avatar {
+    grid-area: avatar;
+}
+
+.approach-cta {
+    grid-area: cta;
+    border-bottom: none;
+}
+
+.approach-avatar img {
+    width: 100%;
+    max-width: 220px;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.avatar-divider {
+    width: 60px;
+    height: 4px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#4f68ff,#73d2a5);
+    margin-bottom: 20px;
+}
+
+.approach-avatar h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: #08133d;
+}
+
+.approach-avatar p {
+    color: #5d6888;
+    line-height: 1.5;
+}
+
+.approach-card img {
+    width: 95px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.approach-card span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #26b47e;
+    margin-bottom: 10px;
+}
+
+.approach-card h4 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #08133d;
+    margin-bottom: 15px;
+}
+
+.approach-card p {
+    color: #5d6888;
+    line-height: 1.5;
+}
+
+.approach-cta {
+    text-align: center;
+    background: #f9fcfb;
+}
+
+.approach-cta img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.cta-time {
+    color: #26b47e;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.approach-cta h3 {
+    font-size: 2.2rem;
+    color: #08133d;
+    margin: 15px 0;
+}
+
+.approach-cta p {
+    color: #5d6888;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(90deg,#4f68ff,#73d2a5);
+}
+
+.step1 { grid-area: step1; }
+.step2 { grid-area: step2; }
+.step3 { grid-area: step3; }
+.step4 { grid-area: step4; }
+.step5 { grid-area: step5; }
+.step6 { grid-area: step6; }
+
+.approach-grid > :nth-child(2){grid-area:step1;}
+.approach-grid > :nth-child(3){grid-area:step2;}
+.approach-grid > :nth-child(4){grid-area:step3;}
+.approach-grid > :nth-child(6){grid-area:step4;}
+.approach-grid > :nth-child(7){grid-area:step5;}
+.approach-grid > :nth-child(8){grid-area:step6;}
+
+/* LAPTOP */
+
+@media (max-width: 1400px){
+
+    .approach-grid{
+
+        grid-template-columns: repeat(3,1fr);
+
+        grid-template-areas:
+            "step1 step2 step3"
+            "step4 step5 step6"
+            "avatar avatar cta";
+    }
+}
+
+/* TABLET + MOBILE */
+
+@media (max-width: 900px){
+
+    .approach-grid{
+
+        grid-template-columns: repeat(2,1fr);
+
+        grid-template-areas:
+            "step1 step2"
+            "step3 step4"
+            "step5 step6"
+            "avatar avatar"
+            "cta cta";
+    }
+
+    .approach-avatar,
+    .approach-card,
+    .approach-cta{
+        border-right:none;
+    }
+}
