@@ -78,7 +78,7 @@ nav a{
 
     display:grid;
 
-    grid-template-columns:50% 50%;
+    grid-template-columns:80% 20%;
 
     align-items:center;
 
