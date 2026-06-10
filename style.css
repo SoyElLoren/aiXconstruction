@@ -238,3 +238,151 @@ nav a{
         max-width:350px;
     }
 }
+
+
+/* ===================================
+   SUCCESS STORIES
+=================================== */
+
+.success-stories{
+
+    padding:60px 20px;
+}
+
+.section-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.section-header h2{
+
+    font-size:1.7rem;
+
+    font-weight:800;
+
+    color:var(--navy);
+
+    margin-bottom:6px;
+}
+
+.section-header p{
+
+    font-size:0.85rem;
+
+    color:var(--text-soft);
+}
+
+.stories-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:18px;
+}
+
+.story-card{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+}
+
+.story-number{
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    color:white;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:14px;
+}
+
+.story-number.success{
+
+    background:var(--green);
+}
+
+.story-card h3{
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    color:var(--navy);
+}
+
+.story-card p{
+
+    font-size:0.82rem;
+
+    line-height:1.6;
+
+    color:var(--text-soft);
+
+    margin-bottom:18px;
+
+    flex-grow:1;
+}
+
+.story-card img{
+
+    width:100%;
+
+    display:block;
+
+    margin-top:auto;
+}
+
+/* =====================
+   LAPTOP
+===================== */
+
+@media(max-width:1400px){
+
+    .stories-grid{
+
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* =====================
+   TABLET + MOBILE
+===================== */
+
+@media(max-width:900px){
+
+    .stories-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
