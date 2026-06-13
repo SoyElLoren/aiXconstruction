@@ -243,104 +243,162 @@ nav a{
 
 
 
+
+
 /* ===================================
    SUCCESS STORIES
 =================================== */
 
 .success-stories{
-    padding:80px 20px;
+    width:100%;
+    padding:70px 30px;
 }
 
 .section-header{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
 .section-header h2{
-    font-size:3rem;
+    font-size:2rem;
     font-weight:800;
-    color:#07153B;
-    margin-bottom:10px;
+    color:#08133d;
+    margin-bottom:8px;
 }
 
 .section-header p{
-    color:#6c7a89;
-    font-size:1.2rem;
+    font-size:1rem;
+    color:#5d6888;
 }
+
+/* GRID */
 
 .stories-grid{
+
     display:grid;
+
     grid-template-columns:repeat(6,1fr);
-    gap:24px;
+
+    gap:18px;
 }
 
+/* CARD */
+
 .story-card{
-    height:430px;
+
+    height:300px;
+
     perspective:1200px;
 }
 
 .card-inner{
+
     position:relative;
+
     width:100%;
     height:100%;
+
     transition:transform .8s;
+
     transform-style:preserve-3d;
 }
 
 .story-card:hover .card-inner{
+
     transform:rotateY(180deg);
 }
 
 .card-front,
 .card-back{
+
     position:absolute;
+
     width:100%;
     height:100%;
-    border-radius:20px;
+
+    border-radius:18px;
+
     background:white;
-    border:1px solid #e7ecf1;
-    box-shadow:0 4px 20px rgba(0,0,0,0.04);
+
+    border:1px solid #e5ebf5;
+
     backface-visibility:hidden;
+
+    overflow:hidden;
 }
 
+/* FRONT */
+
 .card-front{
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
-    padding:20px;
+
+    align-items:center;
+
+    padding:15px;
 }
 
 .card-front img{
+
     width:100%;
     height:100%;
+
     object-fit:contain;
 }
 
+/* BACK */
+
 .card-back{
+
     transform:rotateY(180deg);
-    padding:35px 25px;
+
+    padding:20px;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     text-align:center;
 }
 
 .card-back h3{
-    font-size:1.8rem;
-    line-height:1.2;
-    color:#07153B;
-    margin-bottom:30px;
+
+    font-size:1.05rem;
+
+    line-height:1.25;
+
+    color:#08133d;
+
+    margin-bottom:20px;
+
+    font-weight:700;
 }
 
 .card-back p{
-    font-size:1.05rem;
+
+    font-size:0.82rem;
+
     line-height:1.6;
-    color:#31415d;
-    margin-bottom:22px;
+
+    color:#5d6888;
+
+    margin-bottom:14px;
 }
+
+.card-back p:last-child{
+
+    margin-bottom:0;
+}
+
+/* LAST CARD */
 
 .challenge-card .card-front,
 .challenge-card .card-back{
+
     background:linear-gradient(
         180deg,
         #f8fcfa 0%,
@@ -348,53 +406,79 @@ nav a{
     );
 }
 
-/* ==========================
-   LAPTOP
-========================== */
-
-@media (max-width:1400px){
-
-    .stories-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-}
-
-/* ==========================
+/* ===================================
    TABLET + MOBILE
-========================== */
+=================================== */
 
 @media (max-width:900px){
 
     .stories-grid{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:repeat(3,1fr);
     }
 
     .story-card{
-        height:380px;
-    }
 
-    .section-header h2{
-        font-size:2.3rem;
-    }
-
-}
-
-@media (max-width:600px){
-
-    .story-card{
-        height:340px;
+        height:260px;
     }
 
     .card-back h3{
-        font-size:1.4rem;
-    }
 
-    .card-back p{
         font-size:0.95rem;
     }
 
+    .card-back p{
+
+        font-size:0.75rem;
+    }
 }
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width:600px){
+
+    .success-stories{
+
+        padding:50px 15px;
+    }
+
+    .stories-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:10px;
+    }
+
+    .story-card{
+
+        height:220px;
+    }
+
+    .card-back{
+
+        padding:12px;
+    }
+
+    .card-back h3{
+
+        font-size:0.85rem;
+
+        margin-bottom:10px;
+    }
+
+    .card-back p{
+
+        font-size:0.68rem;
+
+        line-height:1.4;
+
+        margin-bottom:8px;
+    }
+}
+
+
 
 
 
