@@ -255,12 +255,11 @@ nav a{
 }
 
 .section-header{
-    text-align:center;
-    margin-bottom:40px;
+    margin-bottom:25px;
 }
 
 .section-header h2{
-    font-size:2rem;
+    font-size:1.05rem;
     font-weight:800;
     color:#08133d;
     margin-bottom:8px;
@@ -400,9 +399,9 @@ nav a{
 .challenge-card .card-back{
 
     background:linear-gradient(
-        180deg,
-        #f8fcfa 0%,
-        #eef8f3 100%
+        135deg,
+        rgba(79,104,255,0.06),
+        rgba(115,210,165,0.12)
     );
 }
 
@@ -441,7 +440,7 @@ nav a{
 
     .success-stories{
 
-        padding:50px 15px;
+        padding:0 30px 70px;
     }
 
     .stories-grid{
