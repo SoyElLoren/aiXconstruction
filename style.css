@@ -487,208 +487,204 @@ nav a{
 
 
 
-/* =======================================================
-   APPROACH
-======================================================= */
 
-.approach-section {
-    width: 100%;
-    padding: 70px 30px;
+
+
+
+
+/* ===================================
+   ROADMAP
+=================================== */
+
+.roadmap-section{
+
+    padding:60px 20px;
 }
 
-.approach-header {
-    text-align: center;
-    margin-bottom: 40px;
+.roadmap-header{
+
+    margin-bottom:24px;
 }
 
-.approach-header h2 {
-    font-size: 2rem;
-    color: #08133d;
-    margin-bottom: 8px;
+.roadmap-header h2{
+
+    font-size:2rem;
+    font-weight:800;
+    color:var(--navy);
 }
 
-.approach-header p {
-    font-size: 1rem;
-    color: #5d6888;
+.roadmap-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:20px;
 }
 
-.approach-grid {
+.roadmap-card{
 
-    display: grid;
+    height:280px;
 
-    grid-template-columns:
-        1.3fr
-        1fr
-        1fr
-        1fr
-        1.1fr;
-
-    grid-template-areas:
-        "avatar step1 step2 step3 cta"
-        "avatar step4 step5 step6 cta";
-
-    border: 1px solid #e5ebf5;
-    border-radius: 18px;
-    overflow: hidden;
-
-    background: white;
+    perspective:1200px;
 }
 
-.approach-avatar,
-.approach-card,
-.approach-cta {
-    padding: 30px;
-    border-right: 1px solid #e5ebf5;
-    border-bottom: 1px solid #e5ebf5;
+.roadmap-inner{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    transition:transform .8s;
+
+    transform-style:preserve-3d;
 }
 
-.approach-avatar {
-    grid-area: avatar;
+.roadmap-card:hover .roadmap-inner{
+
+    transform:rotateY(180deg);
 }
 
-.approach-cta {
-    grid-area: cta;
-    border-bottom: none;
+.roadmap-front,
+.roadmap-back{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    backface-visibility:hidden;
+
+    box-shadow:0 4px 20px rgba(0,0,0,.04);
 }
 
-.approach-avatar img {
-    width: 100%;
-    max-width: 220px;
-    display: block;
-    margin: 0 auto 25px;
+/* FRONT */
+
+.roadmap-front{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    padding:20px;
 }
 
-.avatar-divider {
-    width: 60px;
-    height: 4px;
-    border-radius: 10px;
-    background: linear-gradient(90deg,#4f68ff,#73d2a5);
-    margin-bottom: 20px;
+.roadmap-number{
+
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    font-size:1.3rem;
+    font-weight:700;
+
+    color:var(--green);
 }
 
-.approach-avatar h3 {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-    color: #08133d;
+.roadmap-front img{
+
+    width:140px;
+    height:140px;
+
+    object-fit:contain;
 }
 
-.approach-avatar p {
-    color: #5d6888;
-    line-height: 1.5;
+/* BACK */
+
+.roadmap-back{
+
+    transform:rotateY(180deg);
+
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
 }
 
-.approach-card img {
-    width: 95px;
-    display: block;
-    margin-bottom: 20px;
+.roadmap-back h3{
+
+    font-size:1rem;
+
+    line-height:1.3;
+
+    margin-bottom:16px;
+
+    color:var(--navy);
 }
 
-.approach-card span {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #26b47e;
-    margin-bottom: 10px;
+.roadmap-back ul{
+
+    list-style:none;
 }
 
-.approach-card h4 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    color: #08133d;
-    margin-bottom: 15px;
+.roadmap-back li{
+
+    font-size:0.82rem;
+
+    line-height:1.7;
+
+    color:var(--text-soft);
+
+    margin-bottom:6px;
 }
 
-.approach-card p {
-    color: #5d6888;
-    line-height: 1.5;
+.roadmap-back li::before{
+
+    content:"• ";
+
+    color:var(--green);
+
+    font-weight:700;
 }
 
-.approach-cta {
-    text-align: center;
-    background: #f9fcfb;
-}
+/* =========================
+   TABLET
+========================= */
 
-.approach-cta img {
-    width: 120px;
-    margin-bottom: 20px;
-}
+@media(max-width:1200px){
 
-.cta-time {
-    color: #26b47e;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
+    .roadmap-grid{
 
-.approach-cta h3 {
-    font-size: 2.2rem;
-    color: #08133d;
-    margin: 15px 0;
-}
-
-.approach-cta p {
-    color: #5d6888;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 12px;
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    background: linear-gradient(90deg,#4f68ff,#73d2a5);
-}
-
-.step1 { grid-area: step1; }
-.step2 { grid-area: step2; }
-.step3 { grid-area: step3; }
-.step4 { grid-area: step4; }
-.step5 { grid-area: step5; }
-.step6 { grid-area: step6; }
-
-.approach-grid > :nth-child(2){grid-area:step1;}
-.approach-grid > :nth-child(3){grid-area:step2;}
-.approach-grid > :nth-child(4){grid-area:step3;}
-.approach-grid > :nth-child(6){grid-area:step4;}
-.approach-grid > :nth-child(7){grid-area:step5;}
-.approach-grid > :nth-child(8){grid-area:step6;}
-
-/* LAPTOP */
-
-@media (max-width: 1400px){
-
-    .approach-grid{
-
-        grid-template-columns: repeat(3,1fr);
-
-        grid-template-areas:
-            "step1 step2 step3"
-            "step4 step5 step6"
-            "avatar avatar cta";
+        grid-template-columns:repeat(3,1fr);
     }
 }
 
-/* TABLET + MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media (max-width: 900px){
+@media(max-width:768px){
 
-    .approach-grid{
+    .roadmap-grid{
 
-        grid-template-columns: repeat(2,1fr);
-
-        grid-template-areas:
-            "step1 step2"
-            "step3 step4"
-            "step5 step6"
-            "avatar avatar"
-            "cta cta";
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .approach-avatar,
-    .approach-card,
-    .approach-cta{
-        border-right:none;
+    .roadmap-card{
+
+        height:240px;
+    }
+
+    .roadmap-front img{
+
+        width:110px;
+        height:110px;
     }
 }
