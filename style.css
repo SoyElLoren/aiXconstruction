@@ -251,7 +251,7 @@ nav a{
 
 .success-stories{
     width:100%;
-    padding:70px 30px;
+    padding:40px 20px 0 20px;
 }
 
 .section-header{
@@ -491,14 +491,13 @@ nav a{
 
 
 
-
 /* ===================================
    ROADMAP
 =================================== */
 
 .roadmap-section{
 
-    padding:60px 20px;
+    padding:0 20px 60px 20px;
 }
 
 .roadmap-header{
@@ -508,7 +507,7 @@ nav a{
 
 .roadmap-header h2{
 
-    font-size:2rem;
+    font-size:1.7rem;
     font-weight:800;
     color:var(--navy);
 }
@@ -523,6 +522,8 @@ nav a{
 }
 
 .roadmap-card{
+
+    position:relative;
 
     height:280px;
 
@@ -539,6 +540,8 @@ nav a{
     transition:transform .8s;
 
     transform-style:preserve-3d;
+
+    -webkit-transform-style:preserve-3d;
 }
 
 .roadmap-card:hover .roadmap-inner{
@@ -546,10 +549,15 @@ nav a{
     transform:rotateY(180deg);
 }
 
+/* BOTH SIDES */
+
 .roadmap-front,
 .roadmap-back{
 
     position:absolute;
+
+    top:0;
+    left:0;
 
     width:100%;
     height:100%;
@@ -560,9 +568,12 @@ nav a{
 
     border-radius:20px;
 
-    backface-visibility:hidden;
-
     box-shadow:0 4px 20px rgba(0,0,0,.04);
+
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+
+    overflow:hidden;
 }
 
 /* FRONT */
@@ -576,8 +587,6 @@ nav a{
     align-items:center;
 
     justify-content:center;
-
-    position:relative;
 
     padding:20px;
 }
@@ -609,13 +618,13 @@ nav a{
 
     transform:rotateY(180deg);
 
-    padding:24px;
-
     display:flex;
 
     flex-direction:column;
 
     justify-content:center;
+
+    padding:24px;
 }
 
 .roadmap-back h3{
@@ -632,6 +641,9 @@ nav a{
 .roadmap-back ul{
 
     list-style:none;
+
+    padding:0;
+    margin:0;
 }
 
 .roadmap-back li{
@@ -654,11 +666,9 @@ nav a{
     font-weight:700;
 }
 
-/* =========================
-   TABLET
-========================= */
+/* DESKTOP + TABLET */
 
-@media(max-width:1200px){
+@media(max-width:900px){
 
     .roadmap-grid{
 
@@ -666,9 +676,7 @@ nav a{
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:768px){
 
