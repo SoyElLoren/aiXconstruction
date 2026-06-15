@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | AIXConstruction</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="navbar-left">
+
+            <a href="index.html">
+                <img
+                    src="images/logo-aixconstruction.png"
+                    alt="AIXConstruction"
+                    class="logo">
+            </a>
+
+        </div>
+
+        <div class="navbar-center">
+
+            <div class="language-switcher">
+
+                <button class="lang active">EN</button>
+                <button class="lang">DE</button>
+                <button class="lang">ES</button>
+
+            </div>
+
+        </div>
+
+        <div class="navbar-right">
+
+            <nav>
+
+                <a href="index.html#services">Services</a>
+
+                <a href="index.html#roadmap">Our Roadmap</a>
+
+            </nav>
+
+            <a href="contact.html" class="contact-btn">
+                Contact
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact-page">
+
+        <div class="contact-content">
+
+            <!-- LEFT COLUMN -->
+
+            <div class="contact-form-column">
+
+                <h1>
+                    Book a free consultation
+                </h1>
+
+                <p class="contact-intro">
+
+                    These answers help me prepare our conversation in advance,
+                    so we can spend less time on introductions and more time
+                    exploring practical opportunities for your business.
+
+                </p>
+
+                <form class="contact-form">
+
+                    <label>
+                        Company *
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Company name"
+                        required
+                    >
+
+                    <label>
+                        Your role *
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Project Manager, Director, Owner..."
+                        required
+                    >
+
+                    <label>
+                        What challenge would you like to discuss? *
+                    </label>
+
+                    <textarea
+                        rows="5"
+                        placeholder="Describe the situation you would like to improve."
+                        required
+                    ></textarea>
+
+                    <label>
+                        What would a successful outcome look like? *
+                    </label>
+
+                    <textarea
+                        rows="5"
+                        placeholder="What would make this conversation valuable for you?"
+                        required
+                    ></textarea>
+
+                    <button type="submit" class="contact-submit">
+
+                        Book free consultation
+
+                    </button>
+
+                </form>
+
+                <p class="contact-note">
+
+                    No sales pitch. No obligation.
+                    Just a practical conversation about where AI may create value in your business.
+
+                </p>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="contact-image-column">
+
+                <img
+                    src="images/business-ai-powered.png"
+                    alt="AI Powered Business"
+                    class="contact-image"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        document.querySelectorAll('.lang').forEach(button => {
+
+            button.addEventListener('click', () => {
+
+                document.querySelectorAll('.lang')
+                    .forEach(b => b.classList.remove('active'));
+
+                button.classList.add('active');
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
