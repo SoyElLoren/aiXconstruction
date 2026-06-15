@@ -28,6 +28,7 @@ body{
 }
 
 
+
 /* =========================
    NAVBAR
 ========================= */
@@ -35,17 +36,17 @@ body{
 .navbar{
 
     width:100%;
-    height:88px;
+    height:72px;
 
-    padding:0 42px;
+    padding:0 28px;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    border-bottom:1px solid var(--border);
-
     background:white;
+
+    border-bottom:1px solid var(--border);
 }
 
 .navbar-left{
@@ -56,11 +57,15 @@ body{
 
 .logo{
 
-    height:42px;
+    height:30px;
     width:auto;
 
     display:block;
 }
+
+/* =========================
+   CENTER
+========================= */
 
 .navbar-center{
 
@@ -75,49 +80,63 @@ body{
     display:flex;
     align-items:center;
 
+    gap:4px;
+
     padding:5px;
 
-    background:#F5F5F5;
+    background:#F6F6F6;
 
     border-radius:999px;
 
-    gap:4px;
+    border:1px solid #EFEFEF;
 }
 
 .lang{
 
     border:none;
+
     background:transparent;
-
-    padding:8px 16px;
-
-    border-radius:999px;
 
     cursor:pointer;
 
-    font-size:0.85rem;
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:0.82rem;
     font-weight:600;
 
     color:var(--text-soft);
 
-    transition:all .2s ease;
+    transition:.2s ease;
+}
+
+.lang:hover{
+
+    color:var(--navy);
 }
 
 .lang.active{
 
     background:white;
 
-    color:#F28A18;
+    color:var(--blue);
 
     box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
+
+/* =========================
+   RIGHT
+========================= */
 
 .navbar-right{
 
     display:flex;
     align-items:center;
 
-    gap:36px;
+    gap:34px;
+
+    margin-right:20px;
 }
 
 nav{
@@ -125,7 +144,7 @@ nav{
     display:flex;
     align-items:center;
 
-    gap:42px;
+    gap:38px;
 }
 
 nav a{
@@ -134,10 +153,10 @@ nav a{
 
     color:var(--navy);
 
-    font-size:0.95rem;
+    font-size:0.92rem;
     font-weight:500;
 
-    transition:.2s;
+    transition:.2s ease;
 }
 
 nav a:hover{
@@ -145,18 +164,22 @@ nav a:hover{
     opacity:.7;
 }
 
+/* =========================
+   CTA BUTTON
+========================= */
+
 .contact-btn{
 
     text-decoration:none;
 
-    padding:15px 30px;
+    color:white;
 
-    border-radius:999px;
-
-    font-size:0.95rem;
+    font-size:0.92rem;
     font-weight:700;
 
-    color:white;
+    padding:14px 28px;
+
+    border-radius:999px;
 
     background:linear-gradient(
         135deg,
@@ -174,6 +197,11 @@ nav a:hover{
     box-shadow:
     0 8px 24px rgba(108,123,255,.25);
 }
+
+
+
+
+
 
 
 
