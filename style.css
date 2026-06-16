@@ -38,6 +38,18 @@ body{
     padding-right:32px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
    NAVBAR
 ========================= */
@@ -59,14 +71,6 @@ body{
 
 .navbar-container{
 
-    max-width:1280px;
-
-    margin:0 auto;
-
-    padding-left:32px;
-
-    padding-right:32px;
-
     height:80px;
 
     display:flex;
@@ -74,6 +78,8 @@ body{
     align-items:center;
 
     justify-content:space-between;
+
+    gap:20px;
 }
 
 .navbar-logo{
@@ -81,6 +87,8 @@ body{
     display:flex;
 
     align-items:center;
+
+    flex-shrink:0;
 }
 
 .logo{
@@ -202,11 +210,13 @@ body{
 
     background:none;
 
-    font-size:2rem;
+    font-size:1.9rem;
 
     cursor:pointer;
 
     color:var(--navy);
+
+    flex-shrink:0;
 }
 
 /* MOBILE MENU */
@@ -214,7 +224,129 @@ body{
 .mobile-menu{
 
     display:none;
+
+    background:white;
+
+    border-top:1px solid var(--border);
 }
+
+.mobile-menu.active{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:24px 32px;
+}
+
+.mobile-menu a{
+
+    text-decoration:none;
+
+    color:var(--navy);
+
+    font-weight:600;
+}
+
+.mobile-contact-btn{
+
+    text-align:center;
+
+    padding:14px;
+
+    border-radius:999px;
+
+    color:white !important;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+    );
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+    .navbar-container{
+
+        height:72px;
+    }
+
+    .navbar-desktop{
+
+        display:none;
+    }
+
+    .mobile-toggle{
+
+        display:block;
+    }
+
+    .navbar-center{
+
+        flex:none;
+    }
+
+    .logo{
+
+        height:26px;
+    }
+
+    .language-switcher{
+
+        transform:scale(.92);
+    }
+}
+
+@media (max-width:600px){
+
+    .navbar-container{
+
+        gap:10px;
+    }
+
+    .logo{
+
+        height:22px;
+    }
+
+    .lang{
+
+        padding:6px 10px;
+
+        font-size:.75rem;
+    }
+
+    .mobile-toggle{
+
+        font-size:1.7rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =========================
    HERO
@@ -278,39 +410,7 @@ body{
 
     color:var(--text-soft);
 
-    margin-bottom:24px;
-
     max-width:700px;
-}
-
-.btn-primary{
-
-    display:inline-block;
-
-    text-decoration:none;
-
-    padding:14px 24px;
-
-    border-radius:10px;
-
-    color:white;
-
-    font-size:.95rem;
-
-    font-weight:600;
-
-    background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--green)
-    );
-
-    transition:.25s;
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-2px);
 }
 
 .hero-image{
@@ -337,81 +437,6 @@ body{
 
 @media (max-width:900px){
 
-    .navbar-container{
-
-        padding-left:20px;
-
-        padding-right:20px;
-    }
-
-    .navbar-desktop{
-
-        display:none;
-    }
-
-    .mobile-toggle{
-
-        display:block;
-    }
-
-    .navbar-center{
-
-        flex:none;
-    }
-
-    .mobile-menu{
-
-        display:none;
-
-        flex-direction:column;
-
-        gap:24px;
-
-        padding:30px;
-
-        background:white;
-
-        border-top:1px solid var(--border);
-    }
-
-    .mobile-menu.active{
-
-        display:flex;
-    }
-
-    .mobile-menu a{
-
-        text-decoration:none;
-
-        color:var(--navy);
-
-        font-size:1.1rem;
-
-        font-weight:600;
-    }
-
-    .mobile-contact-btn{
-
-        padding:16px;
-
-        text-align:center;
-
-        border-radius:999px;
-
-        color:white !important;
-
-        background:linear-gradient(
-            135deg,
-            var(--blue),
-            var(--green)
-        );
-    }
-
-    .logo{
-
-        height:26px;
-    }
-
     .hero-layout{
 
         grid-template-columns:1fr;
@@ -429,6 +454,12 @@ body{
         max-width:350px;
     }
 }
+
+
+
+
+
+
 
 
 
@@ -695,13 +726,15 @@ body{
 
 
 
+
+
 /* ===================================
    ROADMAP
 =================================== */
 
 .roadmap-section{
 
-    padding:0 0 60px;
+    padding:50px 0 60px;
 }
 
 .roadmap-header{
@@ -876,6 +909,11 @@ body{
 
 @media(max-width:768px){
 
+    .roadmap-section{
+
+        padding:40px 0 60px;
+    }
+
     .roadmap-grid{
 
         grid-template-columns:1fr;
@@ -906,9 +944,8 @@ body{
 
 
 
-
 /* ===================================
-   CONTACT
+   CONTACT SECTION (HOME PAGE)
 =================================== */
 
 .contact-section{
@@ -929,7 +966,7 @@ body{
 
     gap:40px;
 
-    padding:28px 36px;
+    padding:24px 36px;
 
     border:1px solid var(--border);
 
@@ -987,21 +1024,28 @@ body{
     margin-bottom:4px;
 }
 
-.contact-button{
+/* CTA */
 
-    display:inline-block;
+.contact-action{
+
+    display:flex;
+
+    align-items:center;
+}
+
+.contact-button-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
 
     text-decoration:none;
 
-    padding:14px 24px;
+    padding:14px 18px;
 
-    border-radius:10px;
-
-    color:white;
-
-    font-size:.9rem;
-
-    font-weight:600;
+    border-radius:14px;
 
     background:linear-gradient(
         135deg,
@@ -1009,13 +1053,53 @@ body{
         var(--green)
     );
 
+    color:white;
+
     transition:.25s;
 }
 
-.contact-button:hover{
+.contact-button-card:hover{
 
     transform:translateY(-2px);
 }
+
+.contact-button-card img{
+
+    width:52px;
+
+    height:52px;
+
+    object-fit:contain;
+
+    flex-shrink:0;
+}
+
+.contact-button-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    line-height:1.2;
+}
+
+.contact-button-text strong{
+
+    font-size:.95rem;
+
+    font-weight:700;
+}
+
+.contact-button-text span{
+
+    font-size:.8rem;
+
+    opacity:.9;
+}
+
+/* MOBILE */
 
 @media(max-width:900px){
 
@@ -1032,6 +1116,16 @@ body{
 
         max-width:none;
     }
+
+    .contact-action{
+
+        justify-content:center;
+    }
+
+    .contact-button-text{
+
+        align-items:center;
+    }
 }
 
 
@@ -1046,9 +1140,25 @@ body{
 
 
 
-/* =========================
-   CONTACT PAGE
-========================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   CONTACT PAGE (CALENDLY)
+=================================== */
 
 .contact-page{
 
@@ -1079,9 +1189,7 @@ body{
     line-height:1.7;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+/* LAYOUT */
 
 .contact-layout{
 
@@ -1092,9 +1200,7 @@ body{
     gap:60px;
 }
 
-/* =========================
-   CALENDLY
-========================= */
+/* CALENDLY */
 
 .calendly-column{
 
@@ -1114,9 +1220,7 @@ body{
     background:white;
 }
 
-/* =========================
-   RIGHT COLUMN
-========================= */
+/* RIGHT COLUMN */
 
 .contact-image-column{
 
@@ -1179,6 +1283,8 @@ body{
     color:var(--navy);
 }
 
+/* TABLET */
+
 @media (max-width:1100px){
 
     .contact-layout{
@@ -1197,6 +1303,8 @@ body{
     }
 }
 
+/* MOBILE */
+
 @media (max-width:768px){
 
     .contact-page{
@@ -1212,6 +1320,11 @@ body{
     .contact-subtitle{
 
         font-size:.95rem;
+    }
+
+    .calendly-inline-widget{
+
+        min-width:100% !important;
     }
 }
 
