@@ -26,10 +26,12 @@
         <div class="navbar-left">
 
             <a href="index.html">
+
                 <img
                     src="images/logo-aixconstruction.png"
                     alt="AIXConstruction"
                     class="logo">
+
             </a>
 
         </div>
@@ -51,40 +53,47 @@
             <nav>
 
                 <a href="index.html#services">Services</a>
-
                 <a href="index.html#roadmap">Our Roadmap</a>
 
             </nav>
 
             <a href="contact.html" class="contact-btn">
+
                 Contact
+
             </a>
 
         </div>
 
     </header>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
 
     <section class="contact-page">
 
         <div class="contact-content">
 
-            <!-- LEFT COLUMN -->
+            <!-- LEFT -->
 
             <div class="contact-form-column">
 
                 <h1>
+
                     Book a free consultation
+
                 </h1>
 
                 <p class="contact-intro">
 
-                    A few quick answers help me prepare our conversation and focus on what matters most for your business.
+                    A few quick answers help me prepare our conversation
+                    and focus on what matters most for your business.
 
                 </p>
 
-                <form class="contact-form">
+                <form
+                    class="contact-form"
+                    action="https://formspree.io/f/mwvjzprl"
+                    method="POST">
 
                     <label>
                         Company *
@@ -92,9 +101,9 @@
 
                     <input
                         type="text"
+                        name="company"
                         placeholder="Company name"
-                        required
-                    >
+                        required>
 
                     <label>
                         Your role *
@@ -102,63 +111,48 @@
 
                     <input
                         type="text"
+                        name="role"
                         placeholder="Project Manager, Director, Owner..."
-                        required
-                    >
+                        required>
+
+                    <label>
+                        Email *
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        required>
 
                     <label>
                         What challenge would you like to discuss? *
                     </label>
 
                     <textarea
+                        name="challenge"
                         rows="5"
                         placeholder="Describe the situation you would like to improve."
-                        required
-                    ></textarea>
+                        required></textarea>
 
                     <label>
                         What would a successful outcome look like? *
                     </label>
 
                     <textarea
+                        name="outcome"
                         rows="5"
                         placeholder="What would make this conversation valuable for you?"
-                        required
-                    ></textarea>
+                        required></textarea>
 
-                    <div class="consultation-slot">
-
-                        <label>
-                            Consultation Slot *
-                        </label>
-
-                        <div class="slot-status">
-
-                            Select a consultation slot using the button below.
-
-                        </div>
-
-                    </div>
-
-                    <a
-                        href="https://calendar.app.google/NL35Dnx3mnZMroXRA"
-                        target="_blank"
-                        class="calendar-btn">
-
-                        Book a free consultation
-
-                    </a>
-
-                    <p class="calendar-note">
-
-                        30 minutes · Google Meet
-
-                    </p>
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New consultation request from AIXConstruction">
 
                     <button
                         type="submit"
-                        class="submit-btn"
-                        disabled>
+                        class="submit-btn">
 
                         Submit
 
@@ -168,17 +162,26 @@
 
             </div>
 
-            <!-- RIGHT COLUMN -->
+            <!-- RIGHT -->
 
-            <div class="contact-image-column">
+            <div class="contact-right-column">
 
-                <img
-                    src="images/business-ai-powered.png"
-                    alt="AI Powered Business"
-                    class="contact-image"
-                >
+                <div class="calendly-container">
+
+                    <div
+                        class="calendly-inline-widget"
+                        data-url="https://calendly.com/igpemabus/30min"
+                        style="min-width:320px;height:720px;">
+                    </div>
+
+                </div>
 
                 <div class="contact-message">
+
+                    <img
+                        src="images/business-ai-powered.png"
+                        alt="AI Powered Business"
+                        class="contact-image">
 
                     <p>
 
@@ -202,20 +205,32 @@
 
     </section>
 
+    <!-- CALENDLY -->
+
+    <script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        async>
+    </script>
+
+    <!-- LANGUAGE SWITCHER -->
+
     <script>
 
-        document.querySelectorAll('.lang').forEach(button => {
+        document
+            .querySelectorAll('.lang')
+            .forEach(button => {
 
-            button.addEventListener('click', () => {
+                button.addEventListener('click', () => {
 
-                document.querySelectorAll('.lang')
-                    .forEach(b => b.classList.remove('active'));
+                    document
+                        .querySelectorAll('.lang')
+                        .forEach(b => b.classList.remove('active'));
 
-                button.classList.add('active');
+                    button.classList.add('active');
+
+                });
 
             });
-
-        });
 
     </script>
 
