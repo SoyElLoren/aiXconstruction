@@ -27,7 +27,6 @@ body{
     color:var(--navy);
 }
 
-
 .site-container{
 
     max-width:1280px;
@@ -38,13 +37,6 @@ body{
 
     padding-right:32px;
 }
-
-
-
-
-
-
-
 
 /* =========================
    NAVBAR
@@ -71,9 +63,11 @@ body{
 
     margin:0 auto;
 
-    height:80px;
+    padding-left:32px;
 
-    padding:0 32px;
+    padding-right:32px;
+
+    height:80px;
 
     display:flex;
 
@@ -91,7 +85,7 @@ body{
 
 .logo{
 
-    height:38px;
+    height:30px;
 
     width:auto;
 }
@@ -222,13 +216,132 @@ body{
     display:none;
 }
 
-/* MOBILE */
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    width:100%;
+
+    padding:30px 0 40px;
+}
+
+.hero-layout{
+
+    display:grid;
+
+    grid-template-columns:55% 45%;
+
+    align-items:center;
+
+    gap:40px;
+}
+
+.hero-content{
+
+    max-width:none;
+}
+
+.hero-content h1{
+
+    font-size:3rem;
+
+    line-height:1.1;
+
+    font-weight:800;
+
+    letter-spacing:-0.02em;
+
+    margin-bottom:18px;
+}
+
+.hero-content span{
+
+    color:var(--blue);
+}
+
+.hero-benefits{
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.hero-content p{
+
+    font-size:1rem;
+
+    line-height:1.7;
+
+    color:var(--text-soft);
+
+    margin-bottom:24px;
+
+    max-width:700px;
+}
+
+.btn-primary{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+    );
+
+    transition:.25s;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+}
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:650px;
+
+    display:block;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width:900px){
 
     .navbar-container{
 
-        padding:0 20px;
+        padding-left:20px;
+
+        padding-right:20px;
     }
 
     .navbar-desktop{
@@ -296,152 +409,10 @@ body{
 
     .logo{
 
-        height:30px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-
-    width:100%;
-
-    padding:10px 20px 20px;
-
-    display:grid;
-
-    grid-template-columns:70% 30%;
-
-    align-items:center;
-
-    gap:20px;
-}
-
-.hero-content{
-
-    max-width:none;
-}
-
-.hero-content h1{
-
-    font-size:2rem;
-
-    line-height:1.1;
-
-    font-weight:800;
-
-    letter-spacing:-0.02em;
-
-    margin-bottom:18px;
-}
-
-.hero-content span{
-
-    color:var(--blue);
-}
-
-.hero-benefits{
-
-    font-size:0.9rem;
-
-    font-weight:700;
-
-    margin-bottom:18px;
-}
-
-.hero-content p{
-
-    font-size:0.82rem;
-
-    line-height:1.7;
-
-    color:var(--text-soft);
-
-    margin-bottom:20px;
-
-    max-width:900px;
-}
-
-.btn-primary{
-
-    display:inline-block;
-
-    text-decoration:none;
-
-    padding:10px 18px;
-
-    border-radius:8px;
-
-    color:white;
-
-    font-size:0.82rem;
-
-    font-weight:600;
-
-    background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--green)
-    );
-
-    transition:.25s;
-}
-
-.btn-primary:hover{
-
-    transform:translateY(-2px);
-}
-
-.hero-image{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-}
-
-.hero-image img{
-
-    width:100%;
-
-    max-width:800px;
-
-    display:block;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    .navbar{
-
-        flex-direction:column;
-        gap:14px;
+        height:26px;
     }
 
-    nav{
-
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero{
+    .hero-layout{
 
         grid-template-columns:1fr;
 
@@ -450,12 +421,7 @@ body{
 
     .hero-content h1{
 
-        font-size:1.6rem;
-    }
-
-    .hero-image{
-
-        justify-content:center;
+        font-size:2rem;
     }
 
     .hero-image img{
@@ -470,29 +436,43 @@ body{
 
 
 
+
+
+
+
+
 /* ===================================
-   SUCCESS STORIES
+   SERVICES
 =================================== */
 
-.success-stories{
+.services-section{
+
     width:100%;
-    padding:40px 20px 0 20px;
+
+    padding:40px 0 0;
 }
 
 .section-header{
+
     margin-bottom:25px;
 }
 
 .section-header h2{
-    font-size:1.05rem;
+
+    font-size:1.7rem;
+
     font-weight:800;
-    color:#08133d;
+
+    color:var(--navy);
+
     margin-bottom:8px;
 }
 
 .section-header p{
+
     font-size:1rem;
-    color:#5d6888;
+
+    color:var(--text-soft);
 }
 
 /* GRID */
@@ -591,13 +571,13 @@ body{
 
 .card-back h3{
 
-    font-size:1.05rem;
+    font-size:1rem;
 
-    line-height:1.25;
+    line-height:1.3;
 
-    color:#08133d;
+    color:var(--navy);
 
-    margin-bottom:20px;
+    margin-bottom:16px;
 
     font-weight:700;
 }
@@ -608,9 +588,9 @@ body{
 
     line-height:1.6;
 
-    color:#5d6888;
+    color:var(--text-soft);
 
-    margin-bottom:14px;
+    margin-bottom:12px;
 }
 
 .card-back p:last-child{
@@ -631,7 +611,7 @@ body{
 }
 
 /* ===================================
-   TABLET + MOBILE
+   TABLET
 =================================== */
 
 @media (max-width:900px){
@@ -658,21 +638,21 @@ body{
 }
 
 /* ===================================
-   SMALL MOBILE
+   MOBILE
 =================================== */
 
 @media (max-width:600px){
 
-    .success-stories{
+    .services-section{
 
-        padding:0 30px 70px;
+        padding:20px 0 60px;
     }
 
     .stories-grid{
 
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:1fr;
 
-        gap:10px;
+        gap:14px;
     }
 
     .story-card{
@@ -715,14 +695,13 @@ body{
 
 
 
-
 /* ===================================
    ROADMAP
 =================================== */
 
 .roadmap-section{
 
-    padding:0 20px 60px 20px;
+    padding:0 0 60px;
 }
 
 .roadmap-header{
@@ -733,7 +712,9 @@ body{
 .roadmap-header h2{
 
     font-size:1.7rem;
+
     font-weight:800;
+
     color:var(--navy);
 }
 
@@ -774,18 +755,12 @@ body{
     transform:rotateY(180deg);
 }
 
-/* BOTH SIDES */
-
 .roadmap-front,
 .roadmap-back{
 
     position:absolute;
 
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
+    inset:0;
 
     background:white;
 
@@ -796,12 +771,11 @@ body{
     box-shadow:0 4px 20px rgba(0,0,0,.04);
 
     backface-visibility:hidden;
+
     -webkit-backface-visibility:hidden;
 
     overflow:hidden;
 }
-
-/* FRONT */
 
 .roadmap-front{
 
@@ -824,6 +798,7 @@ body{
     left:18px;
 
     font-size:1.3rem;
+
     font-weight:700;
 
     color:var(--green);
@@ -831,13 +806,12 @@ body{
 
 .roadmap-front img{
 
-    width:140px;
-    height:140px;
+    width:130px;
+
+    height:130px;
 
     object-fit:contain;
 }
-
-/* BACK */
 
 .roadmap-back{
 
@@ -868,6 +842,7 @@ body{
     list-style:none;
 
     padding:0;
+
     margin:0;
 }
 
@@ -891,8 +866,6 @@ body{
     font-weight:700;
 }
 
-/* DESKTOP + TABLET */
-
 @media(max-width:900px){
 
     .roadmap-grid{
@@ -901,13 +874,11 @@ body{
     }
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
 
     .roadmap-grid{
 
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr;
     }
 
     .roadmap-card{
@@ -918,9 +889,12 @@ body{
     .roadmap-front img{
 
         width:110px;
+
         height:110px;
     }
 }
+
+
 
 
 
@@ -939,7 +913,7 @@ body{
 
 .contact-section{
 
-    padding:0 20px 80px;
+    padding:0 0 80px;
 }
 
 .contact-card{
@@ -966,23 +940,21 @@ body{
     box-shadow:0 4px 20px rgba(0,0,0,.04);
 }
 
-/* AVATAR */
-
 .contact-avatar{
 
     display:flex;
+
     justify-content:center;
 }
 
 .contact-avatar img{
 
     width:100px;
+
     height:100px;
 
     object-fit:contain;
 }
-
-/* TEXT */
 
 .contact-content h2{
 
@@ -997,7 +969,7 @@ body{
 
 .contact-content p{
 
-    font-size:0.82rem;
+    font-size:.9rem;
 
     line-height:1.7;
 
@@ -1015,8 +987,6 @@ body{
     margin-bottom:4px;
 }
 
-/* BUTTON */
-
 .contact-button{
 
     display:inline-block;
@@ -1029,7 +999,7 @@ body{
 
     color:white;
 
-    font-size:0.82rem;
+    font-size:.9rem;
 
     font-weight:600;
 
@@ -1047,10 +1017,6 @@ body{
     transform:translateY(-2px);
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:900px){
 
     .contact-card{
@@ -1060,11 +1026,6 @@ body{
         text-align:center;
 
         gap:24px;
-    }
-
-    .contact-avatar{
-
-        justify-content:center;
     }
 
     .contact-content p{
@@ -1085,18 +1046,13 @@ body{
 
 
 
-
 /* =========================
    CONTACT PAGE
 ========================= */
 
 .contact-page{
 
-    max-width:1400px;
-
-    margin:0 auto;
-
-    padding:50px 40px 80px;
+    padding:50px 0 80px;
 }
 
 .contact-title{
@@ -1164,22 +1120,20 @@ body{
 
 .contact-image-column{
 
-    flex:0.75;
+    flex:.75;
 
     display:flex;
 
     flex-direction:column;
 
     align-items:center;
-
-    justify-content:flex-start;
 }
 
 .contact-image{
 
     width:100%;
 
-    max-width:420px;
+    max-width:360px;
 
     height:auto;
 
@@ -1188,7 +1142,7 @@ body{
 
 .contact-message{
 
-    margin-top:24px;
+    margin-top:20px;
 
     text-align:center;
 
@@ -1225,10 +1179,6 @@ body{
     color:var(--navy);
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width:1100px){
 
     .contact-layout{
@@ -1238,7 +1188,7 @@ body{
 
     .contact-image{
 
-        max-width:350px;
+        max-width:320px;
     }
 
     .contact-message{
@@ -1251,7 +1201,7 @@ body{
 
     .contact-page{
 
-        padding:40px 24px 60px;
+        padding:40px 0 60px;
     }
 
     .contact-title{
@@ -1261,6 +1211,9 @@ body{
 
     .contact-subtitle{
 
-        font-size:0.95rem;
+        font-size:.95rem;
     }
 }
+
+
+
