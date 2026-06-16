@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-```
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,15 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-```
-
-</head>
-
-<body>
-
-<header class="navbar">
-
-```
 <div class="site-container navbar-container">
 
     <a href="index.html" class="navbar-logo">
@@ -80,13 +64,6 @@
     </button>
 
 </div>
-```
-
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-
-```
 <a href="index.html#services">
 
     Services
@@ -106,13 +83,6 @@
     Contact
 
 </a>
-```
-
-</div>
-
-<section class="contact-page">
-
-```
 <div class="site-container">
 
     <h1 class="contact-title">
@@ -171,50 +141,3 @@
     </div>
 
 </div>
-```
-
-</section>
-
-<script
-    src="https://assets.calendly.com/assets/external/widget.js"
-    async>
-</script>
-
-<script>
-
-    document.querySelectorAll('.lang').forEach(button => {
-
-        button.addEventListener('click', () => {
-
-            document.querySelectorAll('.lang')
-                .forEach(b => b.classList.remove('active'));
-
-            button.classList.add('active');
-
-        });
-
-    });
-
-</script>
-
-<script>
-
-    const toggle = document.getElementById('mobileToggle');
-
-    const menu = document.getElementById('mobileMenu');
-
-    if(toggle && menu){
-
-        toggle.addEventListener('click', () => {
-
-            menu.classList.toggle('active');
-
-        });
-
-    }
-
-</script>
-
-</body>
-
-</html>
