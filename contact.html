@@ -1,178 +1,219 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact | AIXConstruction</title>
+<title>Contact | AIXConstruction</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+```
 
 </head>
 
-
-
-const toggle = document.getElementById('mobileToggle');
-
-const menu = document.getElementById('mobileMenu');
-
-toggle.addEventListener('click', () => {
-
-    menu.classList.toggle('active');
-
-});
-
-
-
-    
 <body>
 
-    <!-- NAVBAR -->
+<header class="navbar">
 
-    <header class="navbar">
+```
+<div class="site-container navbar-container">
 
-        <div class="navbar-left">
+    <a href="index.html" class="navbar-logo">
 
-            <a href="index.html">
-                <img
-                    src="images/logo-aixconstruction.png"
-                    alt="AIXConstruction"
-                    class="logo">
+        <img
+            src="images/logo-aixconstruction.png"
+            alt="AIXConstruction"
+            class="logo">
+
+    </a>
+
+    <div class="navbar-center">
+
+        <div class="language-switcher">
+
+            <button class="lang active">EN</button>
+            <button class="lang">DE</button>
+            <button class="lang">ES</button>
+
+        </div>
+
+    </div>
+
+    <div class="navbar-desktop">
+
+        <nav class="navbar-links">
+
+            <a href="index.html#services">
+                Services
             </a>
 
-        </div>
-
-        <div class="navbar-center">
-
-            <div class="language-switcher">
-
-                <button class="lang active">EN</button>
-                <button class="lang">DE</button>
-                <button class="lang">ES</button>
-
-            </div>
-
-        </div>
-
-        <div class="navbar-right">
-
-            <nav>
-
-                <a href="index.html#services">
-                    Services
-                </a>
-
-                <a href="index.html#roadmap">
-                    Our Roadmap
-                </a>
-
-            </nav>
-
-            <a href="contact.html" class="contact-btn">
-                Contact
+            <a href="index.html#roadmap">
+                Our Roadmap
             </a>
 
-        </div>
+        </nav>
 
-    </header>
+        <a href="contact.html" class="contact-btn">
 
-    <!-- CONTACT PAGE -->
+            Contact
 
-    <section class="contact-page">
+        </a>
 
-        <h1 class="contact-title">
+    </div>
 
-            Book a free consultation
+    <button
+        class="mobile-toggle"
+        id="mobileToggle"
+        aria-label="Open menu">
 
-        </h1>
+        ☰
 
-        <p class="contact-subtitle">
+    </button>
 
-            A practical conversation to explore AI opportunities
-            for your construction business.
+</div>
+```
 
-        </p>
+</header>
 
-        <div class="contact-layout">
+<div class="mobile-menu" id="mobileMenu">
 
-            <!-- LEFT COLUMN -->
+```
+<a href="index.html#services">
 
-            <div class="calendly-column">
+    Services
 
-                <div
-                    class="calendly-inline-widget"
-                    data-url="https://calendly.com/igpemabus/30min"
-                    style="min-width:320px;height:700px;">
+</a>
 
-                </div>
+<a href="index.html#roadmap">
+
+    Our Roadmap
+
+</a>
+
+<a
+    href="contact.html"
+    class="mobile-contact-btn">
+
+    Contact
+
+</a>
+```
+
+</div>
+
+<section class="contact-page">
+
+```
+<div class="site-container">
+
+    <h1 class="contact-title">
+
+        Book a free consultation
+
+    </h1>
+
+    <p class="contact-subtitle">
+
+        A practical conversation to explore AI opportunities
+        for your construction business.
+
+    </p>
+
+    <div class="contact-layout">
+
+        <div class="calendly-column">
+
+            <div
+                class="calendly-inline-widget"
+                data-url="https://calendly.com/igpemabus/30min"
+                style="min-width:320px;height:700px;">
 
             </div>
 
-            <!-- RIGHT COLUMN -->
+        </div>
 
-            <div class="contact-image-column">
+        <div class="contact-image-column">
 
-                <img
-                    src="images/business-ai-powered.png"
-                    alt="AI Construction"
-                    class="contact-image">
+            <img
+                src="images/business-ai-powered.png"
+                alt="AI Construction"
+                class="contact-image">
 
-                <div class="contact-message">
+            <div class="contact-message">
 
-                    <p>
+                <p>
 
-                        Will your future clients expect anything else,
-                        but that you use <span>AI</span> to continue
-                        providing good services?
+                    Will your future clients expect anything else,
+                    but that you use <span>AI</span> to continue
+                    providing good services?
 
-                    </p>
+                </p>
 
-                    <p class="lets-do-it">
+                <p class="lets-do-it">
 
-                        Let's do it together.
+                    Let's do it together.
 
-                    </p>
-
-                </div>
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- CALENDLY -->
+</div>
+```
 
-    <script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async>
-    </script>
+</section>
 
-    <!-- LANGUAGE BUTTONS -->
+<script
+    src="https://assets.calendly.com/assets/external/widget.js"
+    async>
+</script>
 
-    <script>
+<script>
 
-        document.querySelectorAll('.lang').forEach(button => {
+    document.querySelectorAll('.lang').forEach(button => {
 
-            button.addEventListener('click', () => {
+        button.addEventListener('click', () => {
 
-                document.querySelectorAll('.lang')
-                    .forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.lang')
+                .forEach(b => b.classList.remove('active'));
 
-                button.classList.add('active');
-
-            });
+            button.classList.add('active');
 
         });
 
-    </script>
+    });
+
+</script>
+
+<script>
+
+    const toggle = document.getElementById('mobileToggle');
+
+    const menu = document.getElementById('mobileMenu');
+
+    if(toggle && menu){
+
+        toggle.addEventListener('click', () => {
+
+            menu.classList.toggle('active');
+
+        });
+
+    }
+
+</script>
 
 </body>
 
