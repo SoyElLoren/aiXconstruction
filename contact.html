@@ -1,239 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- CONTACT SECTION -->
 
-<head>
+<section class="contact-page">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1 class="contact-title">
+        Book a free consultation
+    </h1>
 
-    <title>Contact | AIXConstruction</title>
+    <p class="contact-subtitle">
+        A practical conversation to explore AI opportunities
+        for your construction business.
+    </p>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <div class="contact-layout">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- LEFT -->
 
-    <link rel="stylesheet" href="style.css">
+        <div class="calendly-column">
 
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
-
-    <header class="navbar">
-
-        <div class="navbar-left">
-
-            <a href="index.html">
-
-                <img
-                    src="images/logo-aixconstruction.png"
-                    alt="AIXConstruction"
-                    class="logo">
-
-            </a>
-
-        </div>
-
-        <div class="navbar-center">
-
-            <div class="language-switcher">
-
-                <button class="lang active">EN</button>
-                <button class="lang">DE</button>
-                <button class="lang">ES</button>
-
+            <div
+                class="calendly-inline-widget"
+                data-url="https://calendly.com/igpemabus/30min"
+                style="min-width:320px;height:700px;">
             </div>
 
         </div>
 
-        <div class="navbar-right">
+        <!-- RIGHT -->
 
-            <nav>
+        <div class="contact-image-column">
 
-                <a href="index.html#services">Services</a>
-                <a href="index.html#roadmap">Our Roadmap</a>
+            <img
+                src="images/business-ai-powered.png"
+                alt="AI Construction"
+                class="contact-image">
 
-            </nav>
+            <div class="contact-message">
 
-            <a href="contact.html" class="contact-btn">
+                <p>
 
-                Contact
-
-            </a>
-
-        </div>
-
-    </header>
-
-    <!-- CONTACT -->
-
-    <section class="contact-page">
-
-        <div class="contact-content">
-
-            <!-- LEFT -->
-
-            <div class="contact-form-column">
-
-                <h1>
-
-                    Book a free consultation
-
-                </h1>
-
-                <p class="contact-intro">
-
-                    A few quick answers help me prepare our conversation
-                    and focus on what matters most for your business.
+                    Will your future clients expect anything else,
+                    but that you use <span>AI</span> to continue
+                    providing good services?
 
                 </p>
 
-                <form
-                    class="contact-form"
-                    action="https://formspree.io/f/mwvjzprl"
-                    method="POST">
+                <p class="lets-do-it">
 
-                    <label>
-                        Company *
-                    </label>
+                    Let's do it together.
 
-                    <input
-                        type="text"
-                        name="company"
-                        placeholder="Company name"
-                        required>
-
-                    <label>
-                        Your role *
-                    </label>
-
-                    <input
-                        type="text"
-                        name="role"
-                        placeholder="Project Manager, Director, Owner..."
-                        required>
-
-                    <label>
-                        Email *
-                    </label>
-
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="your@email.com"
-                        required>
-
-                    <label>
-                        What challenge would you like to discuss? *
-                    </label>
-
-                    <textarea
-                        name="challenge"
-                        rows="5"
-                        placeholder="Describe the situation you would like to improve."
-                        required></textarea>
-
-                    <label>
-                        What would a successful outcome look like? *
-                    </label>
-
-                    <textarea
-                        name="outcome"
-                        rows="5"
-                        placeholder="What would make this conversation valuable for you?"
-                        required></textarea>
-
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New consultation request from AIXConstruction">
-
-                    <button
-                        type="submit"
-                        class="submit-btn">
-
-                        Submit
-
-                    </button>
-
-                </form>
-
-            </div>
-
-            <!-- RIGHT -->
-
-            <div class="contact-right-column">
-
-                <div class="calendly-container">
-
-                    <div
-                        class="calendly-inline-widget"
-                        data-url="https://calendly.com/igpemabus/30min"
-                        style="min-width:320px;height:720px;">
-                    </div>
-
-                </div>
-
-                <div class="contact-message">
-
-                    <img
-                        src="images/business-ai-powered.png"
-                        alt="AI Powered Business"
-                        class="contact-image">
-
-                    <p>
-
-                        Will your future clients expect anything else,
-                        but that you use <span>AI</span> to continue
-                        providing good services?
-
-                    </p>
-
-                    <p class="lets-do-it">
-
-                        Let's do it together.
-
-                    </p>
-
-                </div>
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- CALENDLY -->
+</section>
 
-    <script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async>
-    </script>
-
-    <!-- LANGUAGE SWITCHER -->
-
-    <script>
-
-        document
-            .querySelectorAll('.lang')
-            .forEach(button => {
-
-                button.addEventListener('click', () => {
-
-                    document
-                        .querySelectorAll('.lang')
-                        .forEach(b => b.classList.remove('active'));
-
-                    button.classList.add('active');
-
-                });
-
-            });
-
-    </script>
-
-</body>
-
-</html>
+<script
+    src="https://assets.calendly.com/assets/external/widget.js"
+    async>
+</script>
