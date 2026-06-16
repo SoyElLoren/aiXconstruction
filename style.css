@@ -981,10 +981,6 @@ nav a:hover{
 
 
 
-
-
-
-
 /* =========================
    CONTACT PAGE
 ========================= */
@@ -995,207 +991,75 @@ nav a:hover{
 
     margin:0 auto;
 
-    padding:60px 40px 80px;
+    padding:50px 40px 80px;
 }
 
-.contact-content{
+.contact-title{
 
-    display:grid;
-
-    grid-template-columns:520px 1fr;
-
-    gap:60px;
-
-    align-items:start;
-}
-
-/* =========================
-   LEFT COLUMN
-========================= */
-
-.contact-form-column{
-
-    width:100%;
-}
-
-.contact-form-column h1{
-
-    font-size:2.4rem;
+    font-size:2.5rem;
 
     font-weight:800;
 
     color:var(--navy);
 
-    line-height:1.1;
-
-    margin-bottom:16px;
+    margin-bottom:12px;
 }
 
-.contact-intro{
+.contact-subtitle{
 
     font-size:1rem;
 
-    line-height:1.7;
-
     color:var(--text-soft);
 
-    margin-bottom:32px;
+    margin-bottom:40px;
 
-    max-width:500px;
+    max-width:600px;
+
+    line-height:1.7;
 }
 
 /* =========================
-   FORM
+   LAYOUT
 ========================= */
 
-.contact-form{
+.contact-layout{
 
     display:flex;
 
-    flex-direction:column;
+    align-items:flex-start;
 
-    gap:16px;
-}
-
-.contact-form label{
-
-    font-size:0.95rem;
-
-    font-weight:600;
-
-    color:var(--navy);
-}
-
-.contact-form input,
-.contact-form textarea{
-
-    width:100%;
-
-    padding:16px 18px;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    background:white;
-
-    font-family:'Inter',sans-serif;
-
-    font-size:0.95rem;
-
-    color:var(--navy);
-
-    transition:.2s ease;
-}
-
-.contact-form textarea{
-
-    resize:vertical;
-
-    min-height:140px;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
-
-    color:#9CA3AF;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-
-    outline:none;
-
-    border-color:var(--blue);
-
-    box-shadow:
-    0 0 0 4px rgba(108,123,255,.08);
-}
-
-/* =========================
-   SUBMIT BUTTON
-========================= */
-
-.submit-btn{
-
-    margin-top:10px;
-
-    width:fit-content;
-
-    border:none;
-
-    cursor:pointer;
-
-    padding:16px 34px;
-
-    border-radius:999px;
-
-    color:white;
-
-    font-size:0.95rem;
-
-    font-weight:700;
-
-    background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--green)
-    );
-
-    transition:.25s ease;
-}
-
-.submit-btn:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-    0 10px 24px rgba(108,123,255,.25);
-}
-
-/* =========================
-   RIGHT COLUMN
-========================= */
-
-.contact-right-column{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:32px;
+    gap:60px;
 }
 
 /* =========================
    CALENDLY
 ========================= */
 
-.calendly-container{
+.calendly-column{
 
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 6px 30px rgba(0,0,0,.04);
+    flex:1.25;
 }
 
 .calendly-inline-widget{
 
-    min-width:320px;
+    width:100%;
 
-    height:720px;
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    background:white;
 }
 
 /* =========================
-   MESSAGE AREA
+   RIGHT COLUMN
 ========================= */
 
-.contact-message{
+.contact-image-column{
+
+    flex:0.75;
 
     display:flex;
 
@@ -1203,31 +1067,33 @@ nav a:hover{
 
     align-items:center;
 
-    text-align:center;
+    justify-content:flex-start;
 }
 
 .contact-image{
 
     width:100%;
 
-    max-width:360px;
+    max-width:420px;
 
     height:auto;
 
     display:block;
-
-    margin-bottom:24px;
 }
 
-.contact-message p{
+.contact-message{
+
+    margin-top:24px;
+
+    text-align:center;
+
+    max-width:420px;
+
+    color:var(--text-soft);
 
     font-size:1rem;
 
     line-height:1.8;
-
-    color:var(--text-soft);
-
-    max-width:600px;
 }
 
 .contact-message span{
@@ -1247,32 +1113,32 @@ nav a:hover{
 
 .lets-do-it{
 
-    margin-top:16px !important;
+    margin-top:16px;
 
-    font-weight:600;
+    font-weight:700;
 
-    color:var(--navy) !important;
+    color:var(--navy);
 }
 
 /* =========================
-   RESPONSIVE
+   MOBILE
 ========================= */
 
-@media (max-width:1200px){
+@media (max-width:1100px){
 
-    .contact-content{
+    .contact-layout{
 
-        grid-template-columns:1fr;
+        flex-direction:column;
     }
 
-    .contact-form-column{
+    .contact-image{
 
-        max-width:700px;
+        max-width:350px;
     }
 
-    .contact-right-column{
+    .contact-message{
 
-        width:100%;
+        max-width:100%;
     }
 }
 
@@ -1283,18 +1149,13 @@ nav a:hover{
         padding:40px 24px 60px;
     }
 
-    .contact-form-column h1{
+    .contact-title{
 
         font-size:2rem;
     }
 
-    .calendly-inline-widget{
+    .contact-subtitle{
 
-        height:650px;
-    }
-
-    .contact-image{
-
-        max-width:280px;
+        font-size:0.95rem;
     }
 }
