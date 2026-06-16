@@ -979,6 +979,12 @@ nav a:hover{
 
 
 
+
+
+
+
+
+
 /* =========================
    CONTACT PAGE
 ========================= */
@@ -989,29 +995,32 @@ nav a:hover{
 
     margin:0 auto;
 
-    padding:60px 40px 100px;
+    padding:60px 40px 80px;
 }
 
 .contact-content{
 
     display:grid;
 
-    grid-template-columns:580px 480px;
+    grid-template-columns:520px 1fr;
 
-    justify-content:center;
+    gap:60px;
 
     align-items:start;
-
-    gap:90px;
 }
 
 /* =========================
    LEFT COLUMN
 ========================= */
 
+.contact-form-column{
+
+    width:100%;
+}
+
 .contact-form-column h1{
 
-    font-size:2.6rem;
+    font-size:2.4rem;
 
     font-weight:800;
 
@@ -1019,7 +1028,7 @@ nav a:hover{
 
     line-height:1.1;
 
-    margin-bottom:20px;
+    margin-bottom:16px;
 }
 
 .contact-intro{
@@ -1030,9 +1039,9 @@ nav a:hover{
 
     color:var(--text-soft);
 
-    max-width:520px;
+    margin-bottom:32px;
 
-    margin-bottom:40px;
+    max-width:500px;
 }
 
 /* =========================
@@ -1045,12 +1054,12 @@ nav a:hover{
 
     flex-direction:column;
 
-    gap:18px;
+    gap:16px;
 }
 
 .contact-form label{
 
-    font-size:.95rem;
+    font-size:0.95rem;
 
     font-weight:600;
 
@@ -1070,11 +1079,11 @@ nav a:hover{
 
     background:white;
 
-    color:var(--navy);
-
     font-family:'Inter',sans-serif;
 
-    font-size:.95rem;
+    font-size:0.95rem;
+
+    color:var(--navy);
 
     transition:.2s ease;
 }
@@ -1086,6 +1095,12 @@ nav a:hover{
     min-height:140px;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+    color:#9CA3AF;
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus{
 
@@ -1094,89 +1109,7 @@ nav a:hover{
     border-color:var(--blue);
 
     box-shadow:
-        0 0 0 4px rgba(108,123,255,.08);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
-
-    color:#9CA3AF;
-}
-
-/* =========================
-   SLOT BOX
-========================= */
-
-.consultation-slot{
-
-    margin-top:10px;
-}
-
-.slot-status{
-
-    margin-top:10px;
-
-    padding:16px 18px;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    background:#F9FAFB;
-
-    color:var(--text-soft);
-
-    font-size:.95rem;
-}
-
-/* =========================
-   CALENDAR BUTTON
-========================= */
-
-.calendar-btn{
-
-    display:inline-block;
-
-    width:fit-content;
-
-    margin-top:8px;
-
-    text-decoration:none;
-
-    padding:16px 30px;
-
-    border-radius:999px;
-
-    color:white;
-
-    font-size:.95rem;
-
-    font-weight:700;
-
-    background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--green)
-    );
-
-    transition:.25s ease;
-}
-
-.calendar-btn:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 10px 24px rgba(108,123,255,.25);
-}
-
-.calendar-note{
-
-    margin-top:-6px;
-
-    font-size:.85rem;
-
-    color:var(--text-soft);
+    0 0 0 4px rgba(108,123,255,.08);
 }
 
 /* =========================
@@ -1185,45 +1118,84 @@ nav a:hover{
 
 .submit-btn{
 
-    width:fit-content;
-
     margin-top:10px;
 
-    padding:16px 32px;
+    width:fit-content;
 
     border:none;
 
-    border-radius:999px;
+    cursor:pointer;
 
-    background:#D1D5DB;
+    padding:16px 34px;
+
+    border-radius:999px;
 
     color:white;
 
-    font-size:.95rem;
+    font-size:0.95rem;
 
     font-weight:700;
-
-    cursor:not-allowed;
-
-    transition:.25s ease;
-}
-
-.submit-btn.enabled{
-
-    cursor:pointer;
 
     background:linear-gradient(
         135deg,
         var(--blue),
         var(--green)
     );
+
+    transition:.25s ease;
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 24px rgba(108,123,255,.25);
 }
 
 /* =========================
    RIGHT COLUMN
 ========================= */
 
-.contact-image-column{
+.contact-right-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:32px;
+}
+
+/* =========================
+   CALENDLY
+========================= */
+
+.calendly-container{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 6px 30px rgba(0,0,0,.04);
+}
+
+.calendly-inline-widget{
+
+    min-width:320px;
+
+    height:720px;
+}
+
+/* =========================
+   MESSAGE AREA
+========================= */
+
+.contact-message{
 
     display:flex;
 
@@ -1231,38 +1203,31 @@ nav a:hover{
 
     align-items:center;
 
-    justify-content:flex-start;
+    text-align:center;
 }
 
 .contact-image{
 
     width:100%;
 
-    max-width:420px;
+    max-width:360px;
 
     height:auto;
 
     display:block;
-}
 
-.contact-message{
-
-    max-width:420px;
-
-    text-align:center;
-
-    margin-top:22px;
-
-    color:var(--text-soft);
-
-    font-size:1rem;
-
-    line-height:1.7;
+    margin-bottom:24px;
 }
 
 .contact-message p{
 
-    margin:0;
+    font-size:1rem;
+
+    line-height:1.8;
+
+    color:var(--text-soft);
+
+    max-width:600px;
 }
 
 .contact-message span{
@@ -1282,39 +1247,32 @@ nav a:hover{
 
 .lets-do-it{
 
-    margin-top:18px !important;
+    margin-top:16px !important;
 
     font-weight:600;
 
-    color:var(--navy);
+    color:var(--navy) !important;
 }
 
 /* =========================
-   MOBILE
+   RESPONSIVE
 ========================= */
 
-@media (max-width:1100px){
+@media (max-width:1200px){
 
     .contact-content{
 
         grid-template-columns:1fr;
-
-        gap:50px;
     }
 
     .contact-form-column{
 
-        max-width:100%;
+        max-width:700px;
     }
 
-    .contact-image{
+    .contact-right-column{
 
-        max-width:350px;
-    }
-
-    .contact-message{
-
-        max-width:500px;
+        width:100%;
     }
 }
 
@@ -1322,7 +1280,7 @@ nav a:hover{
 
     .contact-page{
 
-        padding:40px 24px 70px;
+        padding:40px 24px 60px;
     }
 
     .contact-form-column h1{
@@ -1330,8 +1288,13 @@ nav a:hover{
         font-size:2rem;
     }
 
-    .contact-intro{
+    .calendly-inline-widget{
 
-        font-size:.95rem;
+        height:650px;
+    }
+
+    .contact-image{
+
+        max-width:280px;
     }
 }
