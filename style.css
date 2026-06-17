@@ -287,18 +287,13 @@ body{
     }
 
     .navbar-center{
-
-        flex:none;
+    
+        display:none;
     }
-
+    
     .logo{
-
+    
         height:26px;
-    }
-
-    .language-switcher{
-
-        transform:scale(.92);
     }
 }
 
