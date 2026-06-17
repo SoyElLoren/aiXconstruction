@@ -181,6 +181,13 @@ body{
     font-weight:500;
 }
 
+.active-page{
+
+    color:var(--blue) !important;
+
+    font-weight:700;
+}
+
 .contact-btn{
 
     text-decoration:none;
