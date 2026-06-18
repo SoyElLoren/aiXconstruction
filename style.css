@@ -495,7 +495,6 @@ body{
 
 
 
-
 /* ===================================
    SERVICES
 =================================== */
@@ -516,9 +515,11 @@ body{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:24px;
+
+    align-items:stretch;
 }
 
 .story-card{
@@ -546,16 +547,16 @@ body{
 
     background:linear-gradient(
         180deg,
-        rgba(46,204,113,.08),
+        rgba(124,201,165,.12),
         white
     );
 }
 
 .story-card img{
 
-    width:170px;
+    width:160px;
 
-    height:170px;
+    height:160px;
 
     object-fit:contain;
 
@@ -591,13 +592,35 @@ body{
     margin-bottom:8px;
 }
 
+/* Segunda fila alineada a la izquierda */
+
+.story-card:nth-child(5){
+
+    grid-column:1;
+}
+
+.story-card:nth-child(6){
+
+    grid-column:2;
+}
+
+/* TABLET */
+
 @media(max-width:900px){
 
     .stories-grid{
 
         grid-template-columns:repeat(2,1fr);
     }
+
+    .story-card:nth-child(5),
+    .story-card:nth-child(6){
+
+        grid-column:auto;
+    }
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -611,8 +634,6 @@ body{
         min-height:auto;
     }
 }
-
-
 
 
 
