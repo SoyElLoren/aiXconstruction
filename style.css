@@ -566,6 +566,9 @@ body{
 
 
 
+
+
+
 /* ===================================
    READY TO GENERATE VALUE
 =================================== */
@@ -582,7 +585,7 @@ body{
     grid-template-columns:
         280px
         1fr
-        260px;
+        180px;
 
     align-items:center;
 
@@ -624,7 +627,7 @@ body{
 
     width:100%;
 
-    max-width:260px;
+    max-width:240px;
 
     height:auto;
 
@@ -660,40 +663,34 @@ body{
 
     display:flex;
 
-    align-items:center;
+    flex-direction:column;
 
-    gap:16px;
+    align-items:flex-end;
 
-    background:rgba(255,255,255,.15);
-
-    padding:20px;
-
-    border-radius:18px;
-
-    backdrop-filter:blur(8px);
-}
-
-.cta-appointment img{
-
-    width:60px;
-
-    height:60px;
-
-    object-fit:contain;
+    text-align:right;
 }
 
 .cta-appointment strong{
 
-    display:block;
-
-    font-size:1.1rem;
+    font-size:1.2rem;
 
     font-weight:700;
+
+    margin-bottom:4px;
 }
 
 .cta-appointment span{
 
     opacity:.9;
+
+    margin-bottom:12px;
+}
+
+.cta-arrow{
+
+    font-size:2.2rem;
+
+    font-weight:700;
 }
 
 /* TABLET */
@@ -709,12 +706,14 @@ body{
 
     .cta-icon img{
 
-        max-width:240px;
+        max-width:220px;
     }
 
     .cta-appointment{
 
-        justify-content:center;
+        align-items:center;
+
+        text-align:center;
     }
 }
 
@@ -734,19 +733,14 @@ body{
 
     .cta-icon img{
 
-        max-width:200px;
-    }
-
-    .cta-appointment{
-
-        flex-direction:column;
-
-        text-align:center;
+        max-width:180px;
     }
 }
 
     
 
+
+    
 
 
 
