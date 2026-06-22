@@ -536,33 +536,6 @@ body{
     }
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-    .who-we-help-grid{
-
-        grid-template-columns:1fr !important;
-    }
-
-    .who-card{
-
-        min-height:auto;
-
-        padding:24px;
-    }
-
-    .who-card img{
-
-        width:220px;
-    }
-
-    .who-card ul{
-
-        text-align:left;
-    }
-}
-
 
 
 
