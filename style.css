@@ -489,6 +489,12 @@ body{
    WHO WE HELP
 =================================== */
 
+.who-we-help-section{
+
+    padding: 40px 0 80px;
+
+}
+
 .who-we-help-grid{
 
     display:grid;
@@ -582,7 +588,7 @@ body{
 
 .cta-section {
 
-    padding: 40px 0 80px;
+    padding: 0 0 80px;
 
 }
 
@@ -1017,7 +1023,7 @@ body{
 
 .explore-section{
 
-    padding:0 0 60px;
+    padding:0 0 35px;
 }
 
 .explore-grid{
