@@ -446,29 +446,72 @@ body{
 
 .hero-image{
 
+    position:relative;
+
     display:flex;
-
     justify-content:center;
-
     align-items:center;
+
 }
+
+.hero-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(108,123,255,.12),
+            rgba(124,201,165,.05),
+            transparent 72%
+        );
+
+    right:-70px;
+    top:-70px;
+
+    z-index:-1;
+
+}
+
 
 .hero-image img{
 
     width:100%;
-
     max-width:800px;
 
-    display:block;
+    transform:translateY(18px);
+
 }
+
 .hero{
 
     background:
+
         radial-gradient(
-            ellipse at center,
-            rgba(255,255,255,1) 0%,
-            rgba(247,249,252,1) 100%
+            circle at 18% 18%,
+            rgba(108,123,255,.08),
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(124,201,165,.08),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 45%,
+            #f5fffb 100%
         );
+
 }
 
 /* =========================
@@ -503,14 +546,13 @@ body{
 
 
 
-
 /* ===================================
    WHO WE HELP
 =================================== */
 
 .who-we-help-section{
 
-    padding: 40px 0 80px;
+    padding:40px 0 45px;
 
 }
 
@@ -521,17 +563,14 @@ body{
     grid-template-columns:repeat(4,minmax(0,1fr));
 
     gap:24px;
+
 }
+
+/* ---------- CARDS ---------- */
 
 .who-card{
 
-    background:linear-gradient(
-        180deg,
-        rgba(124,201,165,.04) 0%,
-        rgba(255,255,255,1) 100%
-    );
-
-    border:1px solid #E9EDF2;
+    border:1px solid #E7ECF4;
 
     border-radius:20px;
 
@@ -541,16 +580,62 @@ body{
 
     overflow:hidden;
 
-    transition:.25s ease;
+    transition:all .25s ease;
+
 }
 
 .who-card:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-5px);
 
     box-shadow:
-        0 8px 24px rgba(0,0,0,.05);
+        0 12px 30px rgba(44,62,80,.08);
+
 }
+
+/* ---------- DIFFERENT BACKGROUNDS ---------- */
+
+.who-card:nth-child(1){
+
+    background:linear-gradient(
+        180deg,
+        rgba(108,123,255,.10) 0%,
+        rgba(255,255,255,1) 75%
+    );
+
+}
+
+.who-card:nth-child(2){
+
+    background:linear-gradient(
+        180deg,
+        rgba(124,201,165,.10) 0%,
+        rgba(255,255,255,1) 75%
+    );
+
+}
+
+.who-card:nth-child(3){
+
+    background:linear-gradient(
+        180deg,
+        rgba(108,123,255,.06) 0%,
+        rgba(124,201,165,.08) 100%
+    );
+
+}
+
+.who-card:nth-child(4){
+
+    background:linear-gradient(
+        180deg,
+        rgba(124,201,165,.08) 0%,
+        rgba(108,123,255,.05) 100%
+    );
+
+}
+
+/* ---------- IMAGE ---------- */
 
 .who-card img{
 
@@ -563,7 +648,18 @@ body{
     display:block;
 
     margin:0 auto 24px;
+
+    transition:transform .3s ease;
+
 }
+
+.who-card:hover img{
+
+    transform:scale(1.03);
+
+}
+
+/* ---------- TITLES ---------- */
 
 .who-card h3{
 
@@ -576,7 +672,10 @@ body{
     color:var(--navy);
 
     margin-bottom:14px;
+
 }
+
+/* ---------- DESCRIPTION ---------- */
 
 .who-description{
 
@@ -587,18 +686,52 @@ body{
     max-width:280px;
 
     margin:0 auto;
+
 }
 
-/* TABLET */
+/* ---------- TABLET ---------- */
 
 @media (max-width:1100px){
 
     .who-we-help-grid{
 
         grid-template-columns:repeat(2,minmax(0,1fr));
+
     }
+
 }
 
+/* ---------- MOBILE ---------- */
+
+@media (max-width:768px){
+
+    .who-we-help-grid{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:24px;
+
+    }
+
+    .who-card{
+
+        width:100%;
+
+        padding:24px;
+
+    }
+
+    .who-card img{
+
+        width:220px;
+
+        margin:0 auto 24px;
+
+    }
+
+}
 
 
 
