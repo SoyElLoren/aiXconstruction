@@ -108,7 +108,7 @@
 
     flex-direction:column;
 
-    gap:18px;
+    gap:20px;
 
 }
 
@@ -118,25 +118,31 @@
 
     align-items:center;
 
-    gap:16px;
+    justify-content:flex-start;
+
+    gap:18px;
 
 }
 
 .hero-feature img{
 
-    width:62px;
+    width:56px;
 
-    height:62px;
+    height:56px;
+
+    flex-shrink:0;
 
 }
 
 .hero-feature span{
 
-    font-size:1.1rem;
+    font-size:1.08rem;
 
     font-weight:600;
 
     color:var(--navy);
+
+    line-height:1.35;
 
 }
 
@@ -216,9 +222,9 @@
 
         flex-direction:column;
 
-        text-align:center;
+        text-align:left;
 
-        gap:40px;
+        gap:36px;
 
     }
 
@@ -236,15 +242,35 @@
 
     .hero-subtitle{
 
-        margin-left:auto;
+        margin-bottom:28px;
 
-        margin-right:auto;
+    }
+
+    .hero-features{
+
+        gap:18px;
 
     }
 
     .hero-feature{
 
-        justify-content:center;
+        justify-content:flex-start;
+
+        gap:16px;
+
+    }
+
+    .hero-feature img{
+
+        width:54px;
+
+        height:54px;
+
+    }
+
+    .hero-feature span{
+
+        font-size:1.02rem;
 
     }
 
@@ -277,7 +303,6 @@
     }
 
 }
-
 
 
 
@@ -455,19 +480,19 @@
 
         display:flex;
 
+        gap:16px;
+
         overflow-x:auto;
 
         scroll-snap-type:x mandatory;
 
         scroll-behavior:smooth;
 
-        gap:20px;
-
         padding:0 24px;
 
         margin:0 -24px;
 
-        -ms-overflow-style:none;
+        -webkit-overflow-scrolling:touch;
 
         scrollbar-width:none;
 
@@ -481,7 +506,7 @@
 
     .who-card{
 
-        flex:0 0 calc(100% - 48px);
+        flex:0 0 85%;
 
         scroll-snap-align:center;
 
@@ -503,9 +528,9 @@
 
         justify-content:center;
 
-        gap:10px;
+        gap:12px;
 
-        margin-top:24px;
+        margin-top:28px;
 
     }
 
@@ -519,15 +544,17 @@
 
         background:#D1D5DB;
 
-        transition:.25s;
+        transition:.3s;
+
+        cursor:pointer;
 
     }
 
     .who-dots .dot.active{
 
-        background:var(--navy);
+        background:var(--blue);
 
-        transform:scale(1.25);
+        transform:scale(1.3);
 
     }
 

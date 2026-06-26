@@ -30,6 +30,37 @@ function loadComponent(id, file){
 
                         menu.classList.toggle("active");
 
+                        toggle.innerHTML = menu.classList.contains("active")
+                            ? "&times;"
+                            : "&#9776;";
+
+                    });
+
+                    menu.querySelectorAll("a").forEach(link => {
+
+                        link.addEventListener("click", () => {
+
+                            menu.classList.remove("active");
+
+                            toggle.innerHTML = "&#9776;";
+
+                        });
+
+                    });
+
+                    document.addEventListener("click", (event) => {
+
+                        if(
+                            !menu.contains(event.target) &&
+                            !toggle.contains(event.target)
+                        ){
+
+                            menu.classList.remove("active");
+
+                            toggle.innerHTML = "&#9776;";
+
+                        }
+
                     });
 
                 }
@@ -50,7 +81,6 @@ loadComponent("navbar", "components/navbar.html");
 loadComponent("footer", "components/footer.html");
 
 
-
 /* ===================================
    WHO WE HELP CAROUSEL
 =================================== */
@@ -61,37 +91,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".who-card");
     const dots = document.querySelectorAll(".who-dots .dot");
 
-    if(!grid || cards.length === 0 || dots.length === 0){
-
+    if (!grid || cards.length === 0 || dots.length === 0) {
         return;
-
     }
 
-    function updateDots(){
+    function updateDots() {
 
-        const cardWidth = cards[0].offsetWidth + 20;
+        let activeIndex = 0;
+        let minDistance = Infinity;
 
-        const index = Math.round(grid.scrollLeft / cardWidth);
+        cards.forEach((card, index) => {
+
+            const distance = Math.abs(card.offsetLeft - grid.scrollLeft);
+
+            if (distance < minDistance) {
+
+                minDistance = distance;
+                activeIndex = index;
+
+            }
+
+        });
 
         dots.forEach(dot => dot.classList.remove("active"));
-
-        if(dots[index]){
-
-            dots[index].classList.add("active");
-
-        }
+        dots[activeIndex].classList.add("active");
 
     }
 
-    dots.forEach((dot,index)=>{
+    dots.forEach((dot, index) => {
 
-        dot.addEventListener("click",()=>{
+        dot.addEventListener("click", () => {
 
             grid.scrollTo({
 
-                left:index*(cards[0].offsetWidth+20),
+                left: cards[index].offsetLeft,
 
-                behavior:"smooth"
+                behavior: "smooth"
 
             });
 
@@ -99,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    grid.addEventListener("scroll",()=>{
+    grid.addEventListener("scroll", () => {
 
         window.requestAnimationFrame(updateDots);
 
