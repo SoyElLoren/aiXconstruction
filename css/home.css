@@ -480,19 +480,17 @@
 
         display:flex;
 
-        gap:16px;
-
         overflow-x:auto;
 
         scroll-snap-type:x mandatory;
 
         scroll-behavior:smooth;
 
-        padding:0 24px;
-
-        margin:0 -24px;
-
         -webkit-overflow-scrolling:touch;
+
+        gap:20px;
+
+        padding-bottom:10px;
 
         scrollbar-width:none;
 
@@ -506,13 +504,24 @@
 
     .who-card{
 
-        flex:0 0 85%;
+        flex:0 0 100%;
 
         scroll-snap-align:center;
+
+        width:100%;
 
         padding:24px;
 
     }
+
+    .who-card img{
+
+        width:220px;
+
+        margin:0 auto 24px;
+
+    }
+
 
     .who-card img{
 
@@ -528,13 +537,13 @@
 
         justify-content:center;
 
-        gap:12px;
+        gap:10px;
 
-        margin-top:28px;
+        margin-top:22px;
 
     }
 
-    .who-dots .dot{
+    .dot{
 
         width:10px;
 
@@ -542,22 +551,17 @@
 
         border-radius:50%;
 
-        background:#D1D5DB;
+        background:#D7DCE5;
 
-        transition:.3s;
-
-        cursor:pointer;
+        transition:.25s;
 
     }
 
-    .who-dots .dot.active{
+    .dot.active{
 
         background:var(--blue);
 
-        transform:scale(1.3);
-
     }
-
 }
 
 
