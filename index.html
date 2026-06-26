@@ -7,110 +7,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AI × Construction</title>
+    <title>AIXConstruction | AI for Engineering & Construction</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
 <body>
 
-<header class="navbar">
-
-    <div class="site-container navbar-container">
-
-        <a href="index.html" class="navbar-logo">
-
-            <img
-                src="images/logo-aixconstruction.png"
-                alt="AIXConstruction"
-                class="logo">
-
-        </a>
-
-        <div class="navbar-center">
-
-            <div class="language-switcher">
-
-                <button class="lang active">EN</button>
-                <button class="lang">DE</button>
-                <button class="lang">ES</button>
-
-            </div>
-
-        </div>
-
-        <div class="navbar-desktop">
-
-            <nav class="navbar-links">
-
-                <a href="index.html" class="active-page">
-                    Home
-                </a>
-
-                <a href="services.html">
-                    Services
-                </a>
-
-                <a href="roadmap.html">
-                    Our Roadmap
-                </a>
-
-            </nav>
-
-            <a href="contact.html" class="contact-btn">
-
-                Contact
-
-            </a>
-
-        </div>
-
-        <button
-            class="mobile-toggle"
-            id="mobileToggle"
-            aria-label="Open menu">
-
-            ☰
-
-        </button>
-
-    </div>
-
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html" class="active-page">
-        Home
-    </a>
-
-    <a href="services.html">
-        Services
-    </a>
-
-    <a href="roadmap.html">
-        Our Roadmap
-    </a>
-
-    <a href="contact.html">
-        Contact
-    </a>
-
-    <div class="language-switcher">
-
-        <button class="lang active">EN</button>
-        <button class="lang">DE</button>
-        <button class="lang">ES</button>
-
-    </div>
-
-</div>
+<div id="navbar"></div>
 
 
 <section class="hero">
@@ -309,7 +220,7 @@
 
                 <div class="explore-arrow">
 
-                    →
+                    &rarr;
                     
                 </div>
 
@@ -343,7 +254,7 @@
 
                 <div class="explore-arrow">
 
-                    →
+                    &rarr;
 
                 </div>
 
@@ -387,7 +298,7 @@
 
             <div class="cta-arrow">
 
-                →
+                &rarr;
 
             </div>
 
@@ -398,21 +309,59 @@
 </section>
 
 
+<div id="footer"></div>
+
 <script>
 
-    const toggle = document.getElementById('mobileToggle');
+function loadComponent(id, file){
 
-    const menu = document.getElementById('mobileMenu');
+    fetch(file)
 
-    if(toggle && menu){
+        .then(response => {
 
-        toggle.addEventListener('click', () => {
+            if(!response.ok){
 
-            menu.classList.toggle('active');
+                throw new Error(file);
+
+            }
+
+            return response.text();
+
+        })
+
+        .then(data => {
+
+            document.getElementById(id).innerHTML = data;
+
+            if(id === "navbar"){
+
+                const toggle = document.getElementById("mobileToggle");
+                const menu = document.getElementById("mobileMenu");
+
+                if(toggle && menu){
+
+                    toggle.addEventListener("click", () => {
+
+                        menu.classList.toggle("active");
+
+                    });
+
+                }
+
+            }
+
+        })
+
+        .catch(error => {
+
+            console.error("Component could not be loaded:", error);
 
         });
 
-    }
+}
+
+loadComponent("navbar", "components/navbar.html");
+loadComponent("footer", "components/footer.html");
 
 </script>
 

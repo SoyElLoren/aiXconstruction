@@ -1429,7 +1429,135 @@ body{
 
 
 
+/* ===================================
+   FOOTER
+=================================== */
 
+.footer{
+
+    margin-top:80px;
+
+    padding:70px 0 25px;
+
+    background:#07152F;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108,123,255,.08),
+            transparent 45%,
+            rgba(124,201,165,.06)
+        );
+
+    pointer-events:none;
+
+}
+
+.footer-grid{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:80px;
+
+}
+
+.footer-brand{
+
+    max-width:420px;
+
+}
+
+.footer-brand img{
+
+    width:240px;
+
+    margin-bottom:24px;
+
+}
+
+.footer-brand p{
+
+    color:rgba(255,255,255,.82);
+
+    line-height:1.8;
+
+}
+
+.footer-description{
+
+    margin-top:14px;
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:8px;
+
+}
+
+.footer-links a{
+
+    color:rgba(255,255,255,.82);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--green);
+
+}
+
+.footer-bottom{
+
+    position:relative;
+
+    margin-top:60px;
+
+    padding-top:24px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:.9rem;
+
+}
 
 
 
