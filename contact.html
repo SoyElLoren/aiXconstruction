@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    
+
     <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet">
@@ -23,95 +23,7 @@
 
 <body>
 
-<header class="navbar">
-
-    <div class="site-container navbar-container">
-
-        <a href="index.html" class="navbar-logo">
-
-            <img
-                src="images/logo-aixconstruction.png"
-                alt="AIXConstruction"
-                class="logo">
-
-        </a>
-
-        <div class="navbar-center">
-
-            <div class="language-switcher">
-
-                <button class="lang active">EN</button>
-                <button class="lang">DE</button>
-                <button class="lang">ES</button>
-
-            </div>
-
-        </div>
-
-        <div class="navbar-desktop">
-
-            <nav class="navbar-links">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="services.html">
-                    Services
-                </a>
-
-                <a href="roadmap.html">
-                    Our Roadmap
-                </a>
-
-                <a href="contact.html" class="active-page">
-                    Contact
-                </a>
-
-            </nav>
-
-        </div>
-
-        <button
-            class="mobile-toggle"
-            id="mobileToggle"
-            aria-label="Open menu">
-
-            ☰
-
-        </button>
-
-    </div>
-
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html">
-        Home
-    </a>
-
-    <a href="services.html">
-        Services
-    </a>
-
-    <a href="roadmap.html">
-        Our Roadmap
-    </a>
-
-    <a href="contact.html" class="active-page">
-        Contact
-    </a>
-
-    <div class="language-switcher">
-
-        <button class="lang active">EN</button>
-        <button class="lang">DE</button>
-        <button class="lang">ES</button>
-
-    </div>
-
-</div>
+<div id="navbar"></div>
 
 <section class="contact-page">
 
@@ -132,6 +44,8 @@
 
         <div class="contact-layout">
 
+            <!-- LEFT COLUMN -->
+
             <div class="calendly-column">
 
                 <div
@@ -142,6 +56,8 @@
                 </div>
 
             </div>
+
+            <!-- RIGHT COLUMN -->
 
             <div class="contact-image-column">
 
@@ -180,28 +96,14 @@
 
 </section>
 
+<div id="footer"></div>
+
 <script
     src="https://assets.calendly.com/assets/external/widget.js"
     async>
 </script>
 
-<script>
-
-    const toggle = document.getElementById('mobileToggle');
-
-    const menu = document.getElementById('mobileMenu');
-
-    if(toggle && menu){
-
-        toggle.addEventListener('click', () => {
-
-            menu.classList.toggle('active');
-
-        });
-
-    }
-
-</script>
+<script src="js/main.js"></script>
 
 </body>
 
