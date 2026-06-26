@@ -472,6 +472,7 @@
 
 }
 
+
 /* ---------- MOBILE ---------- */
 
 @media (max-width:768px){
@@ -479,21 +480,20 @@
     .who-we-help-grid{
 
         display:flex;
+        flex-wrap:nowrap;
 
         overflow-x:auto;
+        overflow-y:hidden;
 
         scroll-snap-type:x mandatory;
-
         scroll-behavior:smooth;
-
         -webkit-overflow-scrolling:touch;
 
         gap:20px;
 
-        padding-bottom:10px;
+        padding:0 10px 10px;
 
         scrollbar-width:none;
-
     }
 
     .who-we-help-grid::-webkit-scrollbar{
@@ -504,24 +504,14 @@
 
     .who-card{
 
-        flex:0 0 100%;
+        flex:0 0 calc(100% - 20px);
+        min-width:calc(100% - 20px);
 
         scroll-snap-align:center;
-
-        width:100%;
 
         padding:24px;
 
     }
-
-    .who-card img{
-
-        width:220px;
-
-        margin:0 auto 24px;
-
-    }
-
 
     .who-card img{
 
@@ -536,6 +526,8 @@
         display:flex;
 
         justify-content:center;
+
+        align-items:center;
 
         gap:10px;
 
@@ -562,9 +554,8 @@
         background:var(--blue);
 
     }
+
 }
-
-
 
 
 
