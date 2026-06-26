@@ -1,3 +1,9 @@
+@import url("navbar.css");
+@import url("home.css");
+@import url("pages.css");
+@import url("footer.css");
+
+
 :root{
 
     --navy:#0B1026;

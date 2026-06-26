@@ -290,6 +290,12 @@
 
 
 
+
+
+
+
+
+
 /* ===================================
    WHO WE HELP
 =================================== */
@@ -433,9 +439,7 @@
 
 }
 
-/* ===================================
-   MOBILE CAROUSEL
-=================================== */
+/* ---------- DOTS ---------- */
 
 .who-dots{
 
@@ -443,13 +447,13 @@
 
 }
 
+/* ---------- MOBILE ---------- */
+
 @media (max-width:768px){
 
     .who-we-help-grid{
 
         display:flex;
-
-        gap:20px;
 
         overflow-x:auto;
 
@@ -457,11 +461,15 @@
 
         scroll-behavior:smooth;
 
-        -webkit-overflow-scrolling:touch;
+        gap:20px;
+
+        padding:0 24px;
+
+        margin:0 -24px;
+
+        -ms-overflow-style:none;
 
         scrollbar-width:none;
-
-        padding:0 6% 10px;
 
     }
 
@@ -473,11 +481,11 @@
 
     .who-card{
 
-        flex:0 0 88%;
-
-        padding:24px;
+        flex:0 0 calc(100% - 48px);
 
         scroll-snap-align:center;
+
+        padding:24px;
 
     }
 
@@ -495,15 +503,13 @@
 
         justify-content:center;
 
-        align-items:center;
-
         gap:10px;
 
         margin-top:24px;
 
     }
 
-    .dot{
+    .who-dots .dot{
 
         width:10px;
 
@@ -511,21 +517,23 @@
 
         border-radius:50%;
 
-        background:#D9DEE8;
+        background:#D1D5DB;
 
-        transition:all .25s ease;
+        transition:.25s;
 
     }
 
-    .dot.active{
+    .who-dots .dot.active{
 
-        background:var(--blue);
+        background:var(--navy);
 
-        transform:scale(1.3);
+        transform:scale(1.25);
 
     }
 
 }
+
+
 
 
 
