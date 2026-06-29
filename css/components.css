@@ -1,33 +1,158 @@
 /* ===================================
-   GENERIC CARD CAROUSEL
+   SHOWCASE COMPONENT (LAYOUT V1)
 =================================== */
 
-.carousel {
+.showcase{
 
-    position: relative;
+    display:flex;
 
-}
+    gap:20px;
 
-.carousel-track {
+    width:100%;
 
-    display: flex;
-    align-items: stretch;
-    gap: 24px;
+    height:560px;
 
 }
 
-.carousel-slide {
+/* ===================================
+   PANELS
+=================================== */
 
-    display: flex;
-    flex: 1;
+.showcase-item{
+
+    flex:1;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#F5F7FA;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    cursor:pointer;
+
+    transition:
+        flex .45s ease,
+        box-shadow .30s ease;
 
 }
 
-/* Make every card fill the slide */
+.showcase-item:hover{
 
-.carousel-slide > * {
+    box-shadow:
+        0 14px 32px rgba(15,23,42,.08);
 
-    width: 100%;
+}
+
+.showcase-item--active{
+
+    flex:3.5;
+
+}
+
+/* ===================================
+   MEDIA
+=================================== */
+
+.showcase-media{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    overflow:hidden;
+
+    padding:40px 28px 0;
+
+}
+
+.showcase-media img{
+
+    width:260px;
+
+    height:auto;
+
+    flex-shrink:0;
+
+}
+
+/* ===================================
+   CONTENT
+=================================== */
+
+.showcase-content{
+
+    position:absolute;
+
+    left:28px;
+
+    right:28px;
+
+    bottom:28px;
+
+}
+
+.showcase-title-short,
+.showcase-title-full{
+
+    margin:0;
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    color:var(--navy);
+
+    line-height:1.3;
+
+}
+
+.showcase-title-full{
+
+    display:none;
+
+}
+
+.showcase-content p{
+
+    display:none;
+
+}
+
+/* ===================================
+   ACTIVE PANEL
+=================================== */
+
+.showcase-item--active .showcase-title-short{
+
+    display:none;
+
+}
+
+.showcase-item--active .showcase-title-full{
+
+    display:block;
+
+}
+
+.showcase-item--active .showcase-content p{
+
+    display:block;
+
+    margin-top:14px;
+
+    color:var(--text-soft);
+
+    line-height:1.7;
 
 }
 
@@ -37,85 +162,31 @@
 
 @media (max-width:768px){
 
-    .carousel-track{
+    .showcase{
 
-        overflow-x: auto;
-        overflow-y: hidden;
+        flex-direction:column;
 
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
+        gap:14px;
 
-        scrollbar-width: none;
-
-        padding-bottom: 8px;
+        height:auto;
 
     }
 
-    .carousel-track::-webkit-scrollbar{
+    .showcase-item{
 
-        display: none;
-
-    }
-
-    .carousel-slide{
-
-        flex: 0 0 calc(100% - 24px);
-
-        scroll-snap-align: center;
+        background:white;
 
     }
 
-}
+    .showcase-item--active{
 
-/* ===================================
-   PAGINATION
-=================================== */
-
-.carousel-pagination{
-
-    display: none;
-
-}
-
-@media (max-width:768px){
-
-    .carousel-pagination{
-
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-
-        gap: 10px;
-
-        margin-top: 24px;
-
-    }
-
-    .carousel-dot{
-
-        width: 10px;
-        height: 10px;
-
-        padding: 0;
-
-        border: none;
-        border-radius: 50%;
-
-        background: #D8DEE8;
-
-        cursor: pointer;
-
-        transition: all .25s ease;
-
-    }
-
-    .carousel-dot.active{
-
-        background: var(--blue);
-
-        transform: scale(1.15);
+        background:
+            linear-gradient(
+                180deg,
+                rgba(108,123,255,.12),
+                rgba(124,201,165,.08),
+                white
+            );
 
     }
 

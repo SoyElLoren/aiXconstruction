@@ -81,6 +81,88 @@ loadComponent("navbar", "components/navbar.html");
 loadComponent("footer", "components/footer.html");
 
 
+function loadComponent(id, file){
+
+    fetch(file)
+
+        .then(response => {
+
+            if(!response.ok){
+
+                throw new Error(file);
+
+            }
+
+            return response.text();
+
+        })
+
+        .then(data => {
+
+            document.getElementById(id).innerHTML = data;
+
+            if(id === "navbar"){
+
+                const toggle = document.getElementById("mobileToggle");
+                const menu = document.getElementById("mobileMenu");
+
+                if(toggle && menu){
+
+                    toggle.addEventListener("click", () => {
+
+                        menu.classList.toggle("active");
+
+                        toggle.innerHTML = menu.classList.contains("active")
+                            ? "&times;"
+                            : "&#9776;";
+
+                    });
+
+                    menu.querySelectorAll("a").forEach(link => {
+
+                        link.addEventListener("click", () => {
+
+                            menu.classList.remove("active");
+
+                            toggle.innerHTML = "&#9776;";
+
+                        });
+
+                    });
+
+                    document.addEventListener("click", (event) => {
+
+                        if(
+                            !menu.contains(event.target) &&
+                            !toggle.contains(event.target)
+                        ){
+
+                            menu.classList.remove("active");
+
+                            toggle.innerHTML = "&#9776;";
+
+                        }
+
+                    });
+
+                }
+
+            }
+
+        })
+
+        .catch(error => {
+
+            console.error("Component could not be loaded:", error);
+
+        });
+
+}
+
+loadComponent("navbar", "components/navbar.html");
+loadComponent("footer", "components/footer.html");
+
+
 /* ===================================
    WHO WE HELP CAROUSEL
 =================================== */

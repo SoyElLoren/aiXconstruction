@@ -314,165 +314,6 @@
 
 
 
-/* ===================================
-   WHO WE HELP
-=================================== */
-
-.who-we-help-section{
-
-    padding:40px 0 45px;
-
-}
-
-/* ---------- CARDS ---------- */
-
-.who-card{
-
-    border:1px solid #E7ECF4;
-
-    border-radius:20px;
-
-    padding:32px 28px;
-
-    text-align:center;
-
-    overflow:hidden;
-
-    transition:all .25s ease;
-
-}
-
-.who-card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-        0 12px 30px rgba(44,62,80,.08);
-
-}
-
-/* ---------- CARD VARIANTS ---------- */
-
-.who-card--blue{
-
-    background:linear-gradient(
-        180deg,
-        rgba(108,123,255,.10) 0%,
-        #ffffff 75%
-    );
-
-}
-
-.who-card--green{
-
-    background:linear-gradient(
-        180deg,
-        rgba(124,201,165,.10) 0%,
-        #ffffff 75%
-    );
-
-}
-
-.who-card--gradient{
-
-    background:linear-gradient(
-        180deg,
-        rgba(108,123,255,.06) 0%,
-        rgba(124,201,165,.08) 100%
-    );
-
-}
-
-.who-card--mint{
-
-    background:linear-gradient(
-        180deg,
-        rgba(124,201,165,.08) 0%,
-        rgba(108,123,255,.05) 100%
-    );
-
-}
-
-/* ---------- IMAGE ---------- */
-
-.who-card img{
-
-    width:240px;
-
-    max-width:100%;
-
-    height:auto;
-
-    display:block;
-
-    margin:0 auto 24px;
-
-    transition:transform .3s ease;
-
-}
-
-.who-card:hover img{
-
-    transform:scale(1.03);
-
-}
-
-/* ---------- TITLES ---------- */
-
-.who-card h3{
-
-    font-size:1.25rem;
-
-    font-weight:700;
-
-    line-height:1.3;
-
-    color:var(--navy);
-
-    margin-bottom:14px;
-
-}
-
-/* ---------- DESCRIPTION ---------- */
-
-.who-description{
-
-    color:var(--text-soft);
-
-    line-height:1.7;
-
-    max-width:280px;
-
-    margin:0 auto;
-
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width:768px){
-
-    .who-card{
-
-        padding:24px;
-
-    }
-
-    .who-card img{
-
-        width:220px;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-
 
 /* ==========================
    CTA SECTION
@@ -483,7 +324,257 @@
     padding: 0 0 80px;
 
 }
+/* ===================================
+   WHO WE HELP
+=================================== */
 
+.who-we-help-section{
+
+    padding:50px 0 60px;
+
+}
+
+/* ===================================
+   SHOWCASE
+=================================== */
+
+.showcase{
+
+    display:flex;
+
+    gap:20px;
+
+    width:100%;
+
+    height:560px;
+
+}
+
+/* ---------- PANEL ---------- */
+
+.showcase-item{
+
+    position:relative;
+
+    flex:1;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    background:#F5F7FA;
+
+    cursor:pointer;
+
+    transition:
+        flex .45s ease,
+        background .35s ease,
+        border-color .35s ease;
+
+}
+
+/* ---------- ACTIVE PANEL ---------- */
+
+.showcase-item--active{
+
+    flex:3.5;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(108,123,255,.38) 0%,
+            rgba(108,123,255,.22) 40%,
+            rgba(124,201,165,.18) 75%,
+            #FFFFFF 100%
+        );
+
+    border-color:rgba(108,123,255,.45);
+
+}
+
+/* ===================================
+   IMAGE
+=================================== */
+
+.showcase-media{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    overflow:hidden;
+
+    padding-top:18px;
+
+}
+
+.showcase-media img{
+
+    width:440px;
+
+    max-width:none;
+
+    height:auto;
+
+    transition:transform .45s ease;
+
+}
+
+.showcase-item--active .showcase-media img{
+
+    transform:translateY(-8px);
+
+}
+
+/* ===================================
+   COLLAPSED TITLE
+=================================== */
+
+.showcase-title-short{
+
+    position:absolute;
+
+    left:28px;
+
+    bottom:28px;
+
+    margin:0;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    color:var(--navy);
+
+    opacity:1;
+
+    transition:opacity .15s ease;
+
+}
+
+/* ===================================
+   EXPANDED CONTENT
+=================================== */
+
+.showcase-content{
+
+    position:absolute;
+
+    left:28px;
+
+    right:28px;
+
+    bottom:28px;
+
+}
+
+.showcase-title-full{
+
+    margin:0;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    color:var(--navy);
+
+}
+
+.showcase-content p{
+
+    margin-top:16px;
+
+    color:var(--text-soft);
+
+    line-height:1.7;
+
+}
+
+/* ---------- DEFAULT ---------- */
+
+.showcase-title-full,
+.showcase-content p{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(8px);
+
+}
+
+/* ---------- ACTIVE ---------- */
+
+.showcase-item--active .showcase-title-short{
+
+    opacity:0;
+
+}
+
+/* ---------- CONTENT ---------- */
+
+.showcase-item--content-visible .showcase-title-full,
+.showcase-item--content-visible .showcase-content p{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+    transition:
+        opacity .22s ease,
+        transform .22s ease;
+
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width:768px){
+
+    .showcase{
+
+        flex-direction:column;
+
+        gap:14px;
+
+        height:auto;
+
+    }
+
+    .showcase-item{
+
+        flex:none;
+
+        height:90px;
+
+    }
+
+    .showcase-item--active{
+
+        height:420px;
+
+    }
+
+    .showcase-media img{
+
+        width:300px;
+
+    }
+
+}
 .cta-link-card {
 
     display: flex;

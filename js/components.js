@@ -1,107 +1,90 @@
 /* ===================================
-   GENERIC CARD CAROUSEL
+   SHOWCASE COMPONENT
 =================================== */
 
-function initCarousels() {
+function initShowcase() {
 
-    document.querySelectorAll("[data-carousel]").forEach(carousel => {
+    document.querySelectorAll("[data-showcase]").forEach(showcase => {
 
-        const track = carousel.querySelector(".carousel-track");
-        const slides = [...carousel.querySelectorAll(".carousel-slide")];
-        const pagination = carousel.querySelector(".carousel-pagination");
+        const items = showcase.querySelectorAll(".showcase-item");
 
-        if (!track || slides.length <= 1 || !pagination) return;
+        if(!items.length) return;
 
-        /* ---------------------------------
-           CREATE DOTS
-        --------------------------------- */
+        function setActive(item){
 
-        pagination.innerHTML = "";
+            items.forEach(panel => {
 
-        slides.forEach((_, index) => {
+                panel.classList.remove(
+                    "showcase-item--active",
+                    "showcase-item--content-visible"
+                );
 
-            const dot = document.createElement("button");
+            });
 
-            dot.className = "carousel-dot";
+            item.classList.add("showcase-item--active");
 
-            if(index === 0){
-                dot.classList.add("active");
-            }
+            setTimeout(() => {
 
-            dot.addEventListener("click", () => {
+                if(item.classList.contains("showcase-item--active")){
 
-                track.scrollTo({
+                    item.classList.add("showcase-item--content-visible");
 
-                    left: slides[index].offsetLeft,
+                }
 
-                    behavior: "smooth"
+            },360);
+
+        }
+
+        /* ---------- Initial card ---------- */
+
+        const initial =
+            showcase.querySelector(".showcase-item--active") ||
+            items[0];
+
+        setActive(initial);
+
+        /* ---------- Desktop ---------- */
+
+        if(window.innerWidth > 768){
+
+            items.forEach(item=>{
+
+                item.addEventListener("mouseenter",()=>{
+
+                    if(item.classList.contains("showcase-item--active")){
+                        return;
+                    }
+
+                    setActive(item);
 
                 });
 
             });
 
-            pagination.appendChild(dot);
-
-        });
-
-        const dots = pagination.querySelectorAll(".carousel-dot");
-
-        /* ---------------------------------
-           ACTIVE DOT
-        --------------------------------- */
-
-        function updateDots(){
-
-            let activeIndex = 0;
-
-            let minDistance = Infinity;
-
-            slides.forEach((slide,index)=>{
-
-                const distance = Math.abs(
-
-                    slide.offsetLeft - track.scrollLeft
-
-                );
-
-                if(distance < minDistance){
-
-                    minDistance = distance;
-
-                    activeIndex = index;
-
-                }
-
-            });
-
-            dots.forEach(dot=>dot.classList.remove("active"));
-
-            dots[activeIndex].classList.add("active");
-
         }
 
-        let ticking = false;
+        /* ---------- Mobile ---------- */
 
-        track.addEventListener("scroll",()=>{
+        else{
 
-            if(ticking) return;
+            items.forEach(item=>{
 
-            window.requestAnimationFrame(()=>{
+                item.addEventListener("click",()=>{
 
-                updateDots();
+                    if(item.classList.contains("showcase-item--active")){
+                        return;
+                    }
 
-                ticking = false;
+                    setActive(item);
+
+                });
 
             });
 
-            ticking = true;
-
-        });
-
-        updateDots();
+        }
 
     });
 
 }
 
-document.addEventListener("DOMContentLoaded", initCarousels);
+window.addEventListener("load", initShowcase);
