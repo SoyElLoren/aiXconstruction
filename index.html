@@ -10,16 +10,17 @@
     <title>AIXConstruction | AI for Engineering & Construction</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 
 
 </head>
 
-<body>
+<body class="home-page">
 
 <div id="navbar"></div>
 
@@ -99,12 +100,12 @@
         <div class="section-header">
 
             <h2>
-                Who we help
+                WHO we help
             </h2>
 
         </div>
 
-        <div class="showcase" data-showcase>
+        <div class="showcase showcase--who-we-help" data-showcase>
 
             <!-- Engineering -->
 
@@ -113,6 +114,7 @@
                 <div class="showcase-media">
 
                     <img
+                        class="showcase-image"
                         src="images/icon-engineering-firms.png"
                         alt="Engineering Firms">
 
@@ -128,7 +130,7 @@
                         Engineering Firms
                     </h3>
 
-                    <p>
+                    <p class="showcase-description">
                         Reduce repetitive engineering work and improve knowledge reuse.
                     </p>
 
@@ -143,6 +145,7 @@
                 <div class="showcase-media">
 
                     <img
+                        class="showcase-image"
                         src="images/icon-bim-digital-teams.png"
                         alt="BIM & Digital Teams">
 
@@ -158,7 +161,7 @@
                         BIM & Digital Teams
                     </h3>
 
-                    <p>
+                    <p class="showcase-description">
                         Identify opportunities and transform them into efficient workflows.
                     </p>
 
@@ -173,6 +176,7 @@
                 <div class="showcase-media">
 
                     <img
+                        class="showcase-image"
                         src="images/icon-innovation-transformation-teams.png"
                         alt="Innovation & Transformation Teams">
 
@@ -185,10 +189,10 @@
                     </h3>
 
                     <h3 class="showcase-title-full">
-                        Innovation & Transformation Teams
+                        Innovation Teams
                     </h3>
 
-                    <p>
+                    <p class="showcase-description">
                         Move from AI ideas to prioritized actions with measurable impact.
                     </p>
 
@@ -203,6 +207,7 @@
                 <div class="showcase-media">
 
                     <img
+                        class="showcase-image"
                         src="images/icon-owners-developers.png"
                         alt="Owners & Developers">
 
@@ -218,7 +223,7 @@
                         Owners & Developers
                     </h3>
 
-                    <p>
+                    <p class="showcase-description">
                         Optimize portfolio performance and make better decisions across assets.
                     </p>
 
@@ -232,6 +237,10 @@
 
 </section>
 
+<!-- ===================================
+     CONTINUE EXPLORING
+=================================== -->
+
 <section class="explore-section">
 
     <div class="site-container">
@@ -239,74 +248,105 @@
         <div class="section-header">
 
             <h2>
-                Continue exploring
+                Continue EXPLORING
             </h2>
 
         </div>
 
-        <div class="explore-grid">
+        <div class="explore-layout">
 
-            <!-- SERVICES -->
+            <!-- ===================================
+                 LEFT COLUMN
+            ==================================== -->
+
+            <div class="showcase explore-showcase" data-showcase>
+
+                <!-- SERVICES -->
+
+                <a
+                    href="services.html"
+                    class="showcase-item showcase-item--active">
+
+                    <div class="showcase-media">
+
+                        <img
+                            class="showcase-image"
+                            src="images/icon-our-services.png"
+                            alt="Our Services">
+
+                    </div>
+
+                    <div class="showcase-content">
+
+                        <h3 class="showcase-title-short">
+                            Services
+                        </h3>
+
+                        <h3 class="showcase-title-full">
+                            Services
+                        </h3>
+
+                    </div>
+
+                </a>
+
+                <!-- ROADMAP -->
+
+                <a
+                    href="services.html#roadmap"
+                    class="showcase-item">
+
+                    <div class="showcase-media">
+
+                        <img
+                            class="showcase-image"
+                            src="images/icon-our-roadmap.png"
+                            alt="Our Roadmap">
+
+                    </div>
+
+                    <div class="showcase-content">
+
+                        <h3 class="showcase-title-short">
+                            Roadmap
+                        </h3>
+
+                        <h3 class="showcase-title-full">
+                            Roadmap
+                        </h3>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- ===================================
+                 RIGHT COLUMN
+            ==================================== -->
 
             <a
-                href="services.html"
-                class="explore-card">
+                href="contact.html"
+                class="contact-card">
 
-                <div class="explore-icon">
+                <img
+                    class="contact-image"
+                    src="images/icon-free-consultation.png"
+                    alt="Book a free AI consultation">
 
-                    <img
-                        src="images/icon-our-services.png"
-                        alt="Our Services">
+                <span class="contact-duration">
 
-                </div>
+                    30 min
 
-                <div class="explore-content">
+                </span>
 
-                    <h3>
-                        Our Services
-                    </h3>
+                <h3>
 
-                    <p>
-                        See how we help teams unlock value with AI and automation.
-                    </p>
+                    Book a free AI consultation
 
-                </div>
+                </h3>
 
-                <div class="explore-arrow">
-
-                    &rarr;
-                    
-                </div>
-
-            </a>
-
-            <!-- ROADMAP -->
-
-            <a
-                href="roadmap.html"
-                class="explore-card">
-
-                <div class="explore-icon">
-
-                    <img
-                        src="images/icon-our-roadmap.png"
-                        alt="Our Roadmap">
-
-                </div>
-
-                <div class="explore-content">
-
-                    <h3>
-                        Our Roadmap
-                    </h3>
-
-                    <p>
-                        Explore our approach and how we turn opportunities into impact.
-                    </p>
-
-                </div>
-
-                <div class="explore-arrow">
+                <div class="contact-arrow">
 
                     &rarr;
 
@@ -318,50 +358,7 @@
 
     </div>
 
-</section>    
-
-
-
-<section class="cta-section">
-
-    <div class="site-container">
-
-        <a
-            href="contact.html"
-            class="cta-link-card">
-
-            <div class="cta-icon">
-
-                <img
-                    src="images/icon-free-consultation.png"
-                    alt="Free Consultation">
-
-            </div>
-
-            <div class="cta-content">
-
-                <h2>
-                    Ready to generate value with AI?
-                </h2>
-
-                <p>
-                    Book a free consultation and discover practical opportunities for automation and AI within your engineering and construction workflows.
-                </p>
-
-            </div>
-
-            <div class="cta-arrow">
-
-                &rarr;
-
-            </div>
-
-        </a>
-
-    </div>
-
 </section>
-
 
 <div id="footer"></div>
 

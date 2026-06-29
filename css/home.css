@@ -1,5 +1,35 @@
 
 
+/* ===================================
+   HOME BACKGROUND
+=================================== */
+
+.home-page{
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(108,123,255,.10),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 85% 18%,
+            rgba(124,201,165,.08),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #F8FBFF 45%,
+            #F6FBF9 100%
+        );
+
+}
+
+
 
 /* ===================================
    HERO
@@ -10,27 +40,6 @@
     width:100%;
 
     padding:50px 0 70px;
-
-    background:
-
-        radial-gradient(
-            circle at 18% 18%,
-            rgba(108,123,255,.12),
-            transparent 42%
-        ),
-
-        radial-gradient(
-            circle at 88% 18%,
-            rgba(124,201,165,.10),
-            transparent 38%
-        ),
-
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #f8fbff 45%,
-            #f5fffb 100%
-        );
 
 }
 
@@ -56,7 +65,7 @@
 
 .hero-content h1{
 
-    font-size:3.8rem;
+    font-size:3.2rem;
 
     line-height:1.05;
 
@@ -176,7 +185,7 @@
 
     top:-60px;
 
-    border-radius:50%;
+    border-radius:var(--card-radius);
 
     background:
 
@@ -327,7 +336,6 @@
     padding:50px 0 60px;
 
 }
-
 /* ===================================
    SHOWCASE
 =================================== */
@@ -354,11 +362,12 @@
 
     overflow:hidden;
 
-    border:1px solid var(--border);
+    border:none;
 
-    border-radius:24px;
+    border-radius:var(--card-radius);
 
-    background:#F5F7FA;
+    background:rgba(255,255,255,var(--card-opacity));
+    backdrop-filter:blur(var(--card-blur));
 
     cursor:pointer;
 
@@ -369,22 +378,16 @@
 
 }
 
-/* ---------- ACTIVE PANEL ---------- */
-
 .showcase-item--active{
 
     flex:3.5;
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(108,123,255,.38) 0%,
-            rgba(108,123,255,.22) 40%,
-            rgba(124,201,165,.18) 75%,
-            #FFFFFF 100%
-        );
+    background:white;
 
-    border-color:rgba(108,123,255,.45);
+    backdrop-filter:blur(var(--card-blur));
+
+    box-shadow:
+        0 10px 28px rgba(11,16,38,.05);
 
 }
 
@@ -396,35 +399,45 @@
 
     position:absolute;
 
-    inset:0;
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    bottom:145px;
 
     display:flex;
 
     justify-content:center;
 
-    align-items:flex-start;
+    align-items:center;
 
     overflow:hidden;
 
-    padding-top:18px;
+    padding:28px;
 
 }
 
 .showcase-media img{
 
-    width:440px;
-
-    max-width:none;
+    width:380px;
 
     height:auto;
 
-    transition:transform .45s ease;
+    object-fit:contain;
+
+    transition:
+        transform var(--card-transition),
+        width var(--card-transition);
 
 }
 
 .showcase-item--active .showcase-media img{
 
-    transform:translateY(-8px);
+    width:430px;
+
+    transform:translateY(-10px);
 
 }
 
@@ -447,8 +460,6 @@
     font-weight:700;
 
     color:var(--navy);
-
-    opacity:1;
 
     transition:opacity .15s ease;
 
@@ -484,7 +495,7 @@
 
 }
 
-.showcase-content p{
+.showcase-description{
 
     margin-top:16px;
 
@@ -497,7 +508,7 @@
 /* ---------- DEFAULT ---------- */
 
 .showcase-title-full,
-.showcase-content p{
+.showcase-description{
 
     opacity:0;
 
@@ -518,7 +529,7 @@
 /* ---------- CONTENT ---------- */
 
 .showcase-item--content-visible .showcase-title-full,
-.showcase-item--content-visible .showcase-content p{
+.showcase-item--content-visible .showcase-description{
 
     opacity:1;
 
@@ -613,7 +624,7 @@
 
     /* Mobile: no description */
 
-    .showcase-content p{
+    .showcase-description{
 
         display:none;
 
@@ -659,9 +670,9 @@
 
     background:white;
 
-    border:1px solid var(--border);
+    border:none;
 
-    border-radius:20px;
+    border-radius:var(--card-radius);
 
     padding:28px;
 
@@ -769,143 +780,258 @@
 }
 
 
-
 /* ===================================
-   EXPLORE MORE
+   CONTINUE EXPLORING
 =================================== */
 
 .explore-section{
 
-    padding:0 0 35px;
+    padding:20px 0 80px;
+
 }
 
-.explore-grid{
+.explore-layout{
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:60% 40%;
 
-    gap:24px;
+    gap:28px;
+
+    align-items:stretch;
+
 }
 
-.explore-card{
+/* ===================================
+   LEFT COLUMN
+=================================== */
 
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    padding:32px;
+.explore-showcase{
 
     display:flex;
 
+    gap:20px;
+
+    height:430px;
+
+}
+
+/* ===================================
+   PANELS
+=================================== */
+
+.explore-showcase .showcase-item{
+
+    flex:1;
+
+}
+
+.explore-showcase .showcase-item--active{
+
+    flex:2.2;
+
+}
+
+/* ===================================
+   IMAGE
+=================================== */
+
+.explore-showcase .showcase-media img{
+
+    width:180px;
+
+    transition:
+        width var(--card-transition),
+        transform var(--card-transition);
+
+}
+
+.explore-showcase .showcase-item--active .showcase-media img{
+
+    width:220px;
+
+}
+
+/* ===================================
+   TITLES
+=================================== */
+
+.explore-showcase .showcase-title-short{
+
+    font-size:1.1rem;
+
+}
+
+.explore-showcase .showcase-title-full{
+
+    font-size:1.8rem;
+
+}
+
+.explore-showcase .showcase-description{
+
+    display:none;
+
+}
+
+/* ===================================
+   CONTACT CARD
+=================================== */
+
+.contact-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
     align-items:center;
 
-    gap:24px;
+    text-align:center;
+
+    background:white;
+
+    border:none;
+
+    border-radius:var(--card-radius);
+
+    padding:40px;
 
     text-decoration:none;
 
-    transition:.25s ease;
-
     color:inherit;
 
-    min-height:220px;
+    transition:
+        background .35s ease,
+        transform .25s ease;
+
 }
 
-.explore-card:hover{
+.contact-card:hover{
 
     transform:translateY(-2px);
 
-    box-shadow:
-    0 4px 16px rgba(0,0,0,.05);
+    background:var(--card-active-color);
+
 }
 
-.explore-icon{
+.contact-card img{
 
-    flex-shrink:0;
+    width:170px;
+
+    margin-bottom:20px;
+
 }
 
-.explore-icon img{
+.contact-card h3{
 
-    width:120px;
+    margin:0 0 14px;
 
-    height:120px;
+    font-size:2rem;
 
-    object-fit:contain;
-
-    display:block;
-}
-
-.explore-content{
-
-    flex:1;
-}
-
-.explore-content h3{
-
-    font-size:1.4rem;
-
-    font-weight:700;
+    line-height:1.15;
 
     color:var(--navy);
 
-    margin-bottom:12px;
 }
 
-.explore-content p{
+.contact-card p{
+
+    margin:0 0 26px;
 
     color:var(--text-soft);
 
     line-height:1.7;
 
-    margin:0;
 }
 
-.explore-arrow{
+.contact-card span{
 
-    font-size:2rem;
+    font-size:1.15rem;
 
     font-weight:700;
 
     color:var(--blue);
 
-    flex-shrink:0;
 }
 
-/* TABLET */
+/* ===================================
+   TABLET
+=================================== */
 
-@media(max-width:900px){
+@media (max-width:992px){
 
-    .explore-grid{
+    .explore-layout{
 
         grid-template-columns:1fr;
+
     }
+
 }
 
-/* MOBILE */
+/* ===================================
+   MOBILE
+=================================== */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-    .explore-card{
+    .explore-showcase{
 
         flex-direction:column;
 
-        text-align:center;
+        gap:14px;
 
-        min-height:auto;
+        height:auto;
+
     }
 
-    .explore-arrow{
+    .explore-showcase .showcase-item{
 
-        display:none;
+        height:82px;
+
     }
 
-    .explore-icon img{
+    .explore-showcase .showcase-item--active{
 
-        width:100px;
+        height:220px;
 
-        height:100px;
     }
+
+    .explore-showcase .showcase-media img{
+
+        width:140px;
+
+    }
+
+    .explore-showcase .showcase-item--active .showcase-media img{
+
+        width:170px;
+
+    }
+
+    .contact-card{
+
+        padding:32px;
+
+    }
+
+    .contact-card img{
+
+        width:140px;
+
+    }
+
+    .contact-card h3{
+
+        font-size:1.6rem;
+
+    }
+
+    .contact-card p{
+
+        font-size:.95rem;
+
+    }
+
 }
-

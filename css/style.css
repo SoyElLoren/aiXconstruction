@@ -6,6 +6,10 @@
 
 :root{
 
+    /* ===================================
+       BRAND COLORS
+    =================================== */
+
     --navy:#0B1026;
     --white:#FFFFFF;
 
@@ -14,34 +18,125 @@
 
     --text-soft:#6B7280;
     --border:#E5E7EB;
+
+
+    /* ===================================
+       SHOWCASE DESIGN SYSTEM
+    =================================== */
+
+    /* Glass Cards */
+
+    --card-opacity:.30;
+    --card-blur:14px;
+
+    /* Border Radius */
+
+    --card-radius:10px;
+
+    /* Animation */
+
+    --card-transition:.45s;
+
+    /* Active Colors */
+
+    --showcase-start:#6C7BFF;
+    --showcase-end:#7CC9A5;
+
+    /* White mixed into active cards (0-100) */
+
+    --showcase-white:82;
+
+
+    /* ===================================
+       LAYOUT
+    =================================== */
+
+    --container-width:1280px;
+    --container-padding:32px;
+
+
+    /* ===================================
+       TYPOGRAPHY
+    =================================== */
+
+    --font-family:'Manrope',sans-serif;
+
 }
 
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
 
-    font-family:'Inter',sans-serif;
+    font-family:var(--font-family);
+
+    font-size:16px;
+
+    font-weight:500;
+
+    line-height:1.65;
+
     background:var(--white);
+
     color:var(--navy);
+
 }
+
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:var(--font-family);
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    letter-spacing:-0.035em;
+
+    color:var(--navy);
+
+}
+
+p{
+
+    color:var(--text-soft);
+
+    line-height:1.7;
+
+}
+
+
+/* ===================================
+   LAYOUT
+=================================== */
 
 .site-container{
 
-    max-width:1280px;
+    max-width:var(--container-width);
 
     margin:0 auto;
 
-    padding-left:32px;
+    padding-inline:var(--container-padding);
 
-    padding-right:32px;
 }
-
-
