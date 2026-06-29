@@ -1,0 +1,122 @@
+/* ===================================
+   GENERIC CARD CAROUSEL
+=================================== */
+
+.carousel {
+
+    position: relative;
+
+}
+
+.carousel-track {
+
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+
+}
+
+.carousel-slide {
+
+    display: flex;
+    flex: 1;
+
+}
+
+/* Make every card fill the slide */
+
+.carousel-slide > * {
+
+    width: 100%;
+
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width:768px){
+
+    .carousel-track{
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+
+        padding-bottom: 8px;
+
+    }
+
+    .carousel-track::-webkit-scrollbar{
+
+        display: none;
+
+    }
+
+    .carousel-slide{
+
+        flex: 0 0 calc(100% - 24px);
+
+        scroll-snap-align: center;
+
+    }
+
+}
+
+/* ===================================
+   PAGINATION
+=================================== */
+
+.carousel-pagination{
+
+    display: none;
+
+}
+
+@media (max-width:768px){
+
+    .carousel-pagination{
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+
+        margin-top: 24px;
+
+    }
+
+    .carousel-dot{
+
+        width: 10px;
+        height: 10px;
+
+        padding: 0;
+
+        border: none;
+        border-radius: 50%;
+
+        background: #D8DEE8;
+
+        cursor: pointer;
+
+        transition: all .25s ease;
+
+    }
+
+    .carousel-dot.active{
+
+        background: var(--blue);
+
+        transform: scale(1.15);
+
+    }
+
+}
