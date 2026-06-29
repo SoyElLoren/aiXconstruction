@@ -1,5 +1,5 @@
 /* ===================================
-   SHOWCASE COMPONENT (LAYOUT V1)
+   SHOWCASE COMPONENT
 =================================== */
 
 .showcase{
@@ -15,46 +15,60 @@
 }
 
 /* ===================================
-   PANELS
+   PANEL
 =================================== */
 
 .showcase-item{
 
-    flex:1;
-
     position:relative;
 
-    overflow:hidden;
+    flex:1;
 
-    background:#F5F7FA;
+    overflow:hidden;
 
     border:1px solid var(--border);
 
     border-radius:24px;
 
+    background:#F5F7FA;
+
     cursor:pointer;
 
     transition:
         flex .45s ease,
-        box-shadow .30s ease;
+        background .35s ease,
+        border-color .35s ease;
 
 }
 
-.showcase-item:hover{
-
-    box-shadow:
-        0 14px 32px rgba(15,23,42,.08);
-
-}
+/* ---------- ACTIVE ---------- */
 
 .showcase-item--active{
 
     flex:3.5;
 
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(108,123,255,.38) 0%,
+
+            rgba(108,123,255,.22) 40%,
+
+            rgba(124,201,165,.18) 75%,
+
+            #FFFFFF 100%
+
+        );
+
+    border-color:rgba(108,123,255,.45);
+
 }
 
 /* ===================================
-   MEDIA
+   IMAGE
 =================================== */
 
 .showcase-media{
@@ -71,22 +85,64 @@
 
     overflow:hidden;
 
-    padding:40px 28px 0;
+    padding-top:20px;
+
+    transition:padding .45s ease;
+
+}
+
+/* collapsed cards */
+
+.showcase-item:not(.showcase-item--active) .showcase-media{
+
+    padding-top:42px;
 
 }
 
 .showcase-media img{
 
-    width:260px;
+    width:440px;
+
+    max-width:none;
 
     height:auto;
 
-    flex-shrink:0;
+    transition:transform .45s ease;
+
+}
+
+.showcase-item--active .showcase-media img{
+
+    transform:translateY(-8px);
 
 }
 
 /* ===================================
-   CONTENT
+   COLLAPSED TITLE
+=================================== */
+
+.showcase-title-short{
+
+    position:absolute;
+
+    left:28px;
+
+    bottom:28px;
+
+    margin:0;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    color:var(--navy);
+
+    transition:opacity .15s ease;
+
+}
+
+/* ===================================
+   EXPANDED CONTENT
 =================================== */
 
 .showcase-content{
@@ -101,58 +157,67 @@
 
 }
 
-.showcase-title-short,
 .showcase-title-full{
 
     margin:0;
 
-    font-size:1.25rem;
+    font-size:2rem;
 
     font-weight:700;
 
+    line-height:1.15;
+
     color:var(--navy);
-
-    line-height:1.3;
-
-}
-
-.showcase-title-full{
-
-    display:none;
 
 }
 
 .showcase-content p{
 
-    display:none;
-
-}
-
-/* ===================================
-   ACTIVE PANEL
-=================================== */
-
-.showcase-item--active .showcase-title-short{
-
-    display:none;
-
-}
-
-.showcase-item--active .showcase-title-full{
-
-    display:block;
-
-}
-
-.showcase-item--active .showcase-content p{
-
-    display:block;
-
-    margin-top:14px;
+    margin-top:16px;
 
     color:var(--text-soft);
 
     line-height:1.7;
+
+}
+
+/* hidden by default */
+
+.showcase-title-full,
+.showcase-content p{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(8px);
+
+}
+
+/* collapse title */
+
+.showcase-item--active .showcase-title-short{
+
+    opacity:0;
+
+}
+
+/* shown by JS */
+
+.showcase-item--content-visible .showcase-title-full,
+.showcase-item--content-visible .showcase-content p{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+    transition:
+
+        opacity .22s ease,
+
+        transform .22s ease;
 
 }
 
@@ -174,19 +239,73 @@
 
     .showcase-item{
 
-        background:white;
+        flex:none;
+
+        height:82px;
 
     }
 
     .showcase-item--active{
 
-        background:
-            linear-gradient(
-                180deg,
-                rgba(108,123,255,.12),
-                rgba(124,201,165,.08),
-                white
-            );
+        height:360px;
+
+    }
+
+    /* collapsed image lower */
+
+    .showcase-item:not(.showcase-item--active) .showcase-media{
+
+        padding-top:52px;
+
+    }
+
+    .showcase-item--active .showcase-media{
+
+        padding-top:20px;
+
+    }
+
+    .showcase-media img{
+
+        width:300px;
+
+    }
+
+    /* collapsed title */
+
+    .showcase-title-short{
+
+        left:22px;
+
+        bottom:20px;
+
+        font-size:1rem;
+
+    }
+
+    /* expanded */
+
+    .showcase-content{
+
+        left:22px;
+
+        right:22px;
+
+        bottom:24px;
+
+    }
+
+    .showcase-title-full{
+
+        font-size:1.55rem;
+
+    }
+
+    /* hide description on mobile */
+
+    .showcase-content p{
+
+        display:none;
 
     }
 

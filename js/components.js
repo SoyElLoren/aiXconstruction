@@ -2,17 +2,17 @@
    SHOWCASE COMPONENT
 =================================== */
 
-function initShowcase() {
+function initShowcase(){
 
-    document.querySelectorAll("[data-showcase]").forEach(showcase => {
+    document.querySelectorAll("[data-showcase]").forEach(showcase=>{
 
-        const items = showcase.querySelectorAll(".showcase-item");
+        const items=[...showcase.querySelectorAll(".showcase-item")];
 
         if(!items.length) return;
 
         function setActive(item){
 
-            items.forEach(panel => {
+            items.forEach(panel=>{
 
                 panel.classList.remove(
                     "showcase-item--active",
@@ -23,37 +23,47 @@ function initShowcase() {
 
             item.classList.add("showcase-item--active");
 
-            setTimeout(() => {
+            setTimeout(()=>{
 
                 if(item.classList.contains("showcase-item--active")){
 
                     item.classList.add("showcase-item--content-visible");
 
+                    /* Mobile: keep opened card visible */
+
+                    if(window.innerWidth<=768){
+
+                        item.scrollIntoView({
+
+                            behavior:"smooth",
+
+                            block:"nearest"
+
+                        });
+
+                    }
+
                 }
 
-            },360);
+            },420);
 
         }
 
-        /* ---------- Initial card ---------- */
+        const initial=
 
-        const initial =
             showcase.querySelector(".showcase-item--active") ||
+
             items[0];
 
         setActive(initial);
 
-        /* ---------- Desktop ---------- */
-
-        if(window.innerWidth > 768){
+        if(window.innerWidth>768){
 
             items.forEach(item=>{
 
                 item.addEventListener("mouseenter",()=>{
 
-                    if(item.classList.contains("showcase-item--active")){
-                        return;
-                    }
+                    if(item.classList.contains("showcase-item--active")) return;
 
                     setActive(item);
 
@@ -63,17 +73,13 @@ function initShowcase() {
 
         }
 
-        /* ---------- Mobile ---------- */
-
         else{
 
             items.forEach(item=>{
 
                 item.addEventListener("click",()=>{
 
-                    if(item.classList.contains("showcase-item--active")){
-                        return;
-                    }
+                    if(item.classList.contains("showcase-item--active")) return;
 
                     setActive(item);
 
@@ -87,4 +93,4 @@ function initShowcase() {
 
 }
 
-window.addEventListener("load", initShowcase);
+window.addEventListener("load",initShowcase);

@@ -309,12 +309,6 @@
 
 
 
-
-
-
-
-
-
 /* ==========================
    CTA SECTION
 ========================== */
@@ -537,7 +531,6 @@
         transform .22s ease;
 
 }
-
 /* ===================================
    MOBILE
 =================================== */
@@ -558,13 +551,27 @@
 
         flex:none;
 
-        height:90px;
+        height:82px;
 
     }
 
     .showcase-item--active{
 
-        height:420px;
+        height:360px;
+
+    }
+
+    /* ---------- Images ---------- */
+
+    .showcase-item:not(.showcase-item--active) .showcase-media{
+
+        padding-top:52px;
+
+    }
+
+    .showcase-item--active .showcase-media{
+
+        padding-top:20px;
 
     }
 
@@ -574,126 +581,47 @@
 
     }
 
-}
-.cta-link-card {
+    /* ---------- Titles ---------- */
 
-    display: flex;
-    align-items: center;
-    gap: 40px;
+    .showcase-title-short{
 
-    padding: 40px 50px;
+        left:22px;
 
-    border-radius: 28px;
+        bottom:20px;
 
-    text-decoration: none;
-
-    background: linear-gradient(
-        135deg,
-        #6f7cff 0%,
-        #7fb7d9 50%,
-        #7ed7b0 100%
-    );
-
-    color: white;
-
-    transition: all 0.25s ease;
-
-}
-
-.cta-link-card:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 20px 40px rgba(111,124,255,0.20);
-
-}
-
-.cta-icon img {
-
-    width: 120px;
-    display: block;
-
-}
-
-.cta-content {
-
-    flex: 1;
-
-}
-
-.cta-content h2 {
-
-    margin: 0 0 12px;
-
-    font-size: 2rem;
-    font-weight: 800;
-
-    color: white;
-
-}
-
-.cta-content p {
-
-    margin: 0;
-
-    font-size: 1.1rem;
-    line-height: 1.7;
-
-    color: rgba(255,255,255,0.95);
-
-}
-
-.cta-arrow {
-
-    font-size: 3rem;
-    font-weight: 300;
-
-    color: white;
-
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .cta-link-card {
-
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 24px;
-
-        padding: 32px;
+        font-size:1rem;
 
     }
 
-    .cta-icon img {
+    .showcase-content{
 
-        width: 90px;
+        left:22px;
 
-    }
+        right:22px;
 
-    .cta-content h2 {
-
-        font-size: 2rem;
+        bottom:24px;
 
     }
 
-    .cta-content p {
+    .showcase-title-full{
 
-        font-size: 1rem;
+        font-size:1.55rem;
+
+        line-height:1.2;
 
     }
 
-    .cta-arrow {
+    /* Mobile: no description */
 
-        display: none;
+    .showcase-content p{
+
+        display:none;
 
     }
 
 }
+
+
 
 
 
