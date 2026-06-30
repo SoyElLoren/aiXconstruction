@@ -2,278 +2,160 @@
    SHOWCASE COMPONENT
 =================================== */
 
-function initShowcase(){
+function initShowcase() {
 
-    document.querySelectorAll("[data-showcase]").forEach(showcase=>{
+    document
+        .querySelectorAll("[data-showcase]")
+        .forEach(initSingleShowcase);
 
-        const items=[...showcase.querySelectorAll(".showcase-item")];
+}
 
-        if(!items.length) return;
+/* ===================================
+   SINGLE SHOWCASE
+=================================== */
 
-        /* ===================================
-           DESIGN SYSTEM
-        =================================== */
+function initSingleShowcase(showcase) {
 
-        const styles=getComputedStyle(document.documentElement);
+    const items = [...showcase.querySelectorAll(".showcase-item")];
 
-        const startColor=styles
-            .getPropertyValue("--showcase-start")
-            .trim();
+    if (!items.length) return;
 
-        const endColor=styles
-            .getPropertyValue("--showcase-end")
-            .trim();
+    const mode = showcase.dataset.mode || "expand";
 
-        const whiteMix=parseFloat(
+    const initial =
 
-            styles
-                .getPropertyValue("--showcase-white")
-                .trim()
+        showcase.querySelector(".showcase-item--active") ||
+
+        items[0];
+
+    setActive(initial, items);
+
+    registerEvents(showcase, items, mode);
+
+}
+
+/* ===================================
+   ACTIVE PANEL
+=================================== */
+
+function setActive(item, items) {
+
+    items.forEach(panel => {
+
+        panel.classList.remove(
+
+            "showcase-item--active",
+            "showcase-item--content-visible"
 
         );
 
-        /* ===================================
-           COLOR HELPERS
-        =================================== */
+    });
 
-        function hexToRgb(hex){
+    item.classList.add(
 
-            hex=hex.replace("#","");
+        "showcase-item--active"
 
-            return{
+    );
 
-                r:parseInt(hex.substring(0,2),16),
+    window.setTimeout(() => {
 
-                g:parseInt(hex.substring(2,4),16),
+        if (!item.classList.contains(
 
-                b:parseInt(hex.substring(4,6),16)
+            "showcase-item--active"
 
-            };
+        )) return;
 
-        }
+        item.classList.add(
 
-        function interpolate(a,b,t){
+            "showcase-item--content-visible"
 
-            return Math.round(
+        );
 
-                a+(b-a)*t
+        if (window.innerWidth <= 767) {
 
-            );
+            item.scrollIntoView({
 
-        }
+                behavior: "smooth",
 
-        function mixWithWhite(value){
-
-            return Math.round(
-
-                value*(100-whiteMix)/100+
-
-                255*whiteMix/100
-
-            );
-
-        }
-
-        function calculateColor(position){
-
-            const start=hexToRgb(startColor);
-
-            const end=hexToRgb(endColor);
-
-            const r=mixWithWhite(
-
-                interpolate(
-
-                    start.r,
-
-                    end.r,
-
-                    position
-
-                )
-
-            );
-
-            const g=mixWithWhite(
-
-                interpolate(
-
-                    start.g,
-
-                    end.g,
-
-                    position
-
-                )
-
-            );
-
-            const b=mixWithWhite(
-
-                interpolate(
-
-                    start.b,
-
-                    end.b,
-
-                    position
-
-                )
-
-            );
-
-            return `rgb(${r}, ${g}, ${b})`;
-
-        }
-
-        /* ===================================
-           POSITION + COLOR
-        =================================== */
-
-        items.forEach((item,index)=>{
-
-            const position=
-
-                items.length===1
-                    ? 0
-                    : index/(items.length-1);
-
-            item.style.setProperty(
-
-                "--position",
-
-                position
-
-            );
-
-            item.style.setProperty(
-
-                "--card-active-color",
-
-                calculateColor(position)
-
-            );
-
-        });
-
-        /* ===================================
-           ACTIVE PANEL
-        =================================== */
-
-        function setActive(item){
-
-            items.forEach(panel=>{
-
-                panel.classList.remove(
-
-                    "showcase-item--active",
-                    "showcase-item--content-visible"
-
-                );
+                block: "nearest"
 
             });
 
-            item.classList.add(
+        }
 
-                "showcase-item--active"
+    }, 420);
 
-            );
+}
 
-            setTimeout(()=>{
+/* ===================================
+   EVENTS
+=================================== */
 
-                if(item.classList.contains("showcase-item--active")){
+function registerEvents(showcase, items, mode) {
 
-                    item.classList.add(
+    const desktop = window.innerWidth >= 768;
 
-                        "showcase-item--content-visible"
+    items.forEach(item => {
 
-                    );
+        if (desktop) {
 
-                    if(window.innerWidth<=768){
+            item.addEventListener("mouseenter", () => {
 
-                        item.scrollIntoView({
+                if (item.classList.contains(
 
-                            behavior:"smooth",
+                    "showcase-item--active"
 
-                            block:"nearest"
+                )) return;
 
-                        });
+                setActive(item, items);
 
-                    }
+            });
+
+            if (mode === "navigation") {
+
+                item.addEventListener("click", e => {
+
+                    const link = item.getAttribute("href");
+
+                    if (!link) return;
+
+                    e.preventDefault();
+
+                    window.location.href = link;
+
+                });
+
+            }
+
+        }
+
+        else {
+
+            item.addEventListener("click", e => {
+
+                if (
+
+                    !item.classList.contains(
+
+                        "showcase-item--active"
+
+                    )
+
+                ) {
+
+                    e.preventDefault();
+
+                    setActive(item, items);
+
+                    return;
 
                 }
 
-            },420);
+                if (mode === "navigation") {
 
-        }
+                    return;
 
-        /* ===================================
-           INITIAL
-        =================================== */
-
-        const initial=
-
-            showcase.querySelector(
-
-                ".showcase-item--active"
-
-            ) ||
-
-            items[0];
-
-        setActive(initial);
-
-        /* ===================================
-           EVENTS
-        =================================== */
-
-        if(window.innerWidth>768){
-
-            items.forEach(item=>{
-
-                item.addEventListener(
-
-                    "mouseenter",
-
-                    ()=>{
-
-                        if(item.classList.contains(
-
-                            "showcase-item--active"
-
-                        )) return;
-
-                        setActive(item);
-
-                    }
-
-                );
-
-            });
-
-        }
-
-        else{
-
-            items.forEach(item=>{
-
-                item.addEventListener(
-
-                    "click",
-
-                    ()=>{
-
-                        if(item.classList.contains(
-
-                            "showcase-item--active"
-
-                        )) return;
-
-                        setActive(item);
-
-                    }
-
-                );
+                }
 
             });
 
@@ -283,4 +165,14 @@ function initShowcase(){
 
 }
 
-window.addEventListener("load",initShowcase);
+/* ===================================
+   INIT
+=================================== */
+
+window.addEventListener(
+
+    "load",
+
+    initShowcase
+
+);

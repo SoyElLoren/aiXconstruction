@@ -211,19 +211,16 @@
 
     max-width:760px;
 
-    transform:translateY(20px);
-
 }
 
 /* ===================================
-   MOBILE
+   PHONE
 =================================== */
-
-@media (max-width:900px){
+@media (max-width:767px){
 
     .hero{
 
-        padding:40px 0 50px;
+        padding:32px 0 28px;
 
     }
 
@@ -233,7 +230,7 @@
 
         text-align:left;
 
-        gap:36px;
+        gap:20px;
 
     }
 
@@ -247,17 +244,23 @@
 
         font-size:2.6rem;
 
+        margin-bottom:16px;
+
     }
 
     .hero-subtitle{
 
-        margin-bottom:28px;
+        margin-bottom:20px;
+
+        font-size:1.05rem;
+
+        line-height:1.65;
 
     }
 
     .hero-features{
 
-        gap:18px;
+        gap:12px;
 
     }
 
@@ -265,21 +268,21 @@
 
         justify-content:flex-start;
 
-        gap:16px;
+        gap:14px;
 
     }
 
     .hero-feature img{
 
-        width:54px;
+        width:48px;
 
-        height:54px;
+        height:48px;
 
     }
 
     .hero-feature span{
 
-        font-size:1.02rem;
+        font-size:1rem;
 
     }
 
@@ -287,11 +290,13 @@
 
         justify-content:center;
 
+        margin-top:-6px;
+
     }
 
     .hero-image img{
 
-        max-width:420px;
+        max-width:390px;
 
         transform:none;
 
@@ -299,15 +304,15 @@
 
     .hero-image::before{
 
-        width:420px;
+        width:380px;
 
-        height:420px;
+        height:380px;
 
         right:50%;
 
         transform:translateX(50%);
 
-        top:-20px;
+        top:-10px;
 
     }
 
@@ -316,17 +321,6 @@
 
 
 
-
-
-/* ==========================
-   CTA SECTION
-========================== */
-
-.cta-section {
-
-    padding: 0 0 80px;
-
-}
 /* ===================================
    WHO WE HELP
 =================================== */
@@ -336,308 +330,6 @@
     padding:50px 0 60px;
 
 }
-/* ===================================
-   SHOWCASE
-=================================== */
-
-.showcase{
-
-    display:flex;
-
-    gap:20px;
-
-    width:100%;
-
-    height:560px;
-
-}
-
-/* ---------- PANEL ---------- */
-
-.showcase-item{
-
-    position:relative;
-
-    flex:1;
-
-    overflow:hidden;
-
-    border:none;
-
-    border-radius:var(--card-radius);
-
-    background:rgba(255,255,255,var(--card-opacity));
-    backdrop-filter:blur(var(--card-blur));
-
-    cursor:pointer;
-
-    transition:
-        flex .45s ease,
-        background .35s ease,
-        border-color .35s ease;
-
-}
-
-.showcase-item--active{
-
-    flex:3.5;
-
-    background:white;
-
-    backdrop-filter:blur(var(--card-blur));
-
-    box-shadow:
-        0 10px 28px rgba(11,16,38,.05);
-
-}
-
-/* ===================================
-   IMAGE
-=================================== */
-
-.showcase-media{
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    right:0;
-
-    bottom:145px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    padding:28px;
-
-}
-
-.showcase-media img{
-
-    width:380px;
-
-    height:auto;
-
-    object-fit:contain;
-
-    transition:
-        transform var(--card-transition),
-        width var(--card-transition);
-
-}
-
-.showcase-item--active .showcase-media img{
-
-    width:430px;
-
-    transform:translateY(-10px);
-
-}
-
-/* ===================================
-   COLLAPSED TITLE
-=================================== */
-
-.showcase-title-short{
-
-    position:absolute;
-
-    left:28px;
-
-    bottom:28px;
-
-    margin:0;
-
-    font-size:1.15rem;
-
-    font-weight:700;
-
-    color:var(--navy);
-
-    transition:opacity .15s ease;
-
-}
-
-/* ===================================
-   EXPANDED CONTENT
-=================================== */
-
-.showcase-content{
-
-    position:absolute;
-
-    left:28px;
-
-    right:28px;
-
-    bottom:28px;
-
-}
-
-.showcase-title-full{
-
-    margin:0;
-
-    font-size:2rem;
-
-    font-weight:700;
-
-    line-height:1.15;
-
-    color:var(--navy);
-
-}
-
-.showcase-description{
-
-    margin-top:16px;
-
-    color:var(--text-soft);
-
-    line-height:1.7;
-
-}
-
-/* ---------- DEFAULT ---------- */
-
-.showcase-title-full,
-.showcase-description{
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(8px);
-
-}
-
-/* ---------- ACTIVE ---------- */
-
-.showcase-item--active .showcase-title-short{
-
-    opacity:0;
-
-}
-
-/* ---------- CONTENT ---------- */
-
-.showcase-item--content-visible .showcase-title-full,
-.showcase-item--content-visible .showcase-description{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
-    transition:
-        opacity .22s ease,
-        transform .22s ease;
-
-}
-/* ===================================
-   MOBILE
-=================================== */
-
-@media (max-width:768px){
-
-    .showcase{
-
-        flex-direction:column;
-
-        gap:14px;
-
-        height:auto;
-
-    }
-
-    .showcase-item{
-
-        flex:none;
-
-        height:82px;
-
-    }
-
-    .showcase-item--active{
-
-        height:360px;
-
-    }
-
-    /* ---------- Images ---------- */
-
-    .showcase-item:not(.showcase-item--active) .showcase-media{
-
-        padding-top:52px;
-
-    }
-
-    .showcase-item--active .showcase-media{
-
-        padding-top:20px;
-
-    }
-
-    .showcase-media img{
-
-        width:300px;
-
-    }
-
-    /* ---------- Titles ---------- */
-
-    .showcase-title-short{
-
-        left:22px;
-
-        bottom:20px;
-
-        font-size:1rem;
-
-    }
-
-    .showcase-content{
-
-        left:22px;
-
-        right:22px;
-
-        bottom:24px;
-
-    }
-
-    .showcase-title-full{
-
-        font-size:1.55rem;
-
-        line-height:1.2;
-
-    }
-
-    /* Mobile: no description */
-
-    .showcase-description{
-
-        display:none;
-
-    }
-
-}
-
-
-
-
-
-
-
 
 /* ===================================
    SERVICES
@@ -646,6 +338,7 @@
 .services-section{
 
     padding:50px 0 60px;
+
 }
 
 .section-header{
@@ -653,6 +346,7 @@
     text-align:center;
 
     margin-bottom:50px;
+
 }
 
 .stories-grid{
@@ -664,6 +358,7 @@
     gap:24px;
 
     align-items:stretch;
+
 }
 
 .story-card{
@@ -685,6 +380,7 @@
     text-align:center;
 
     min-height:380px;
+
 }
 
 .challenge-card{
@@ -694,6 +390,7 @@
         rgba(124,201,165,.12),
         white
     );
+
 }
 
 .story-card img{
@@ -705,6 +402,7 @@
     object-fit:contain;
 
     margin-bottom:16px;
+
 }
 
 .story-card h3{
@@ -716,6 +414,7 @@
     color:var(--navy);
 
     margin-bottom:18px;
+
 }
 
 .story-card ul{
@@ -725,6 +424,7 @@
     text-align:left;
 
     padding-left:20px;
+
 }
 
 .story-card li{
@@ -734,51 +434,63 @@
     line-height:1.7;
 
     margin-bottom:8px;
+
 }
 
-/* Segunda fila alineada a la izquierda */
+/* Second row aligned left */
 
 .story-card:nth-child(5){
 
     grid-column:1;
+
 }
 
 .story-card:nth-child(6){
 
     grid-column:2;
+
 }
 
-/* TABLET */
+/* ===================================
+   DESKTOP (TABLETS INCLUDED)
+=================================== */
 
-@media(max-width:900px){
+@media (max-width:991px){
 
     .stories-grid{
 
         grid-template-columns:repeat(2,1fr);
+
     }
 
     .story-card:nth-child(5),
     .story-card:nth-child(6){
 
         grid-column:auto;
+
     }
+
 }
 
-/* MOBILE */
+/* ===================================
+   PHONE
+=================================== */
 
-@media(max-width:768px){
+@media (max-width:767px){
 
     .stories-grid{
 
         grid-template-columns:1fr;
+
     }
 
     .story-card{
 
         min-height:auto;
-    }
-}
 
+    }
+
+}
 
 /* ===================================
    CONTINUE EXPLORING
@@ -802,77 +514,36 @@
 
 }
 
-/* ===================================
-   LEFT COLUMN
-=================================== */
+/* Smaller title for compact showcase */
 
-.explore-showcase{
-
-    display:flex;
-
-    gap:20px;
-
-    height:430px;
-
-}
-
-/* ===================================
-   PANELS
-=================================== */
-
-.explore-showcase .showcase-item{
-
-    flex:1;
-
-}
-
-.explore-showcase .showcase-item--active{
-
-    flex:2.2;
-
-}
-
-/* ===================================
-   IMAGE
-=================================== */
-
-.explore-showcase .showcase-media img{
-
-    width:180px;
-
-    transition:
-        width var(--card-transition),
-        transform var(--card-transition);
-
-}
-
-.explore-showcase .showcase-item--active .showcase-media img{
-
-    width:220px;
-
-}
-
-/* ===================================
-   TITLES
-=================================== */
-
-.explore-showcase .showcase-title-short{
-
-    font-size:1.1rem;
-
-}
-
-.explore-showcase .showcase-title-full{
+.showcase--compact .showcase-title-full{
 
     font-size:1.8rem;
 
 }
 
-.explore-showcase .showcase-description{
+.showcase--compact .showcase-title-short{
 
-    display:none;
+    font-size:1.1rem;
 
 }
+
+
+
+
+
+
+
+/* ==========================
+   CTA SECTION
+========================== */
+
+.cta-section {
+
+    padding: 0 0 80px;
+
+}
+
 
 /* ===================================
    CONTACT CARD
@@ -904,7 +575,8 @@
 
     transition:
         background .35s ease,
-        transform .25s ease;
+        transform .25s ease,
+        box-shadow .25s ease;
 
 }
 
@@ -912,7 +584,10 @@
 
     transform:translateY(-2px);
 
-    background:var(--card-active-color);
+    background:white;
+
+    box-shadow:
+        0 10px 28px rgba(11,16,38,.05);
 
 }
 
@@ -957,74 +632,34 @@
 }
 
 /* ===================================
-   TABLET
+   PHONE
 =================================== */
 
-@media (max-width:992px){
+@media (max-width:767px){
 
     .explore-layout{
 
         grid-template-columns:1fr;
 
-    }
-
-}
-
-/* ===================================
-   MOBILE
-=================================== */
-
-@media (max-width:768px){
-
-    .explore-showcase{
-
-        flex-direction:column;
-
-        gap:14px;
-
-        height:auto;
-
-    }
-
-    .explore-showcase .showcase-item{
-
-        height:82px;
-
-    }
-
-    .explore-showcase .showcase-item--active{
-
-        height:220px;
-
-    }
-
-    .explore-showcase .showcase-media img{
-
-        width:140px;
-
-    }
-
-    .explore-showcase .showcase-item--active .showcase-media img{
-
-        width:170px;
+        gap:22px;
 
     }
 
     .contact-card{
 
-        padding:32px;
+        padding:34px;
 
     }
 
     .contact-card img{
 
-        width:140px;
+        width:130px;
 
     }
 
     .contact-card h3{
 
-        font-size:1.6rem;
+        font-size:1.55rem;
 
     }
 

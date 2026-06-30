@@ -1,10 +1,45 @@
 @import url("navbar.css");
+@import url("components.css");
 @import url("home.css");
 @import url("pages.css");
 @import url("footer.css");
 
 
 :root{
+
+    /* ===================================
+    RESPONSIVE DESIGN SYSTEM
+    =================================== */
+
+    /*
+
+    PHONE
+    0px ? 767px
+
+    @media (max-width:767px)
+
+    ------------------------------------
+
+    DESKTOP (includes tablets)
+
+    768px+
+
+    @media (min-width:768px)
+
+    ------------------------------------
+
+    Project rules
+
+    • Phone
+    Mobile layout
+
+    • Desktop
+    Desktop layout
+
+    Never create additional breakpoints
+    without a project-wide reason.
+
+    */
 
     /* ===================================
        BRAND COLORS
