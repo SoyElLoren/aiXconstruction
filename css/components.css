@@ -9,13 +9,9 @@ Reusable component
 Variants
 
 showcase--large
-
 showcase--compact
-
 showcase--navigation
-
 showcase--static
-
 showcase--no-description
 
 */
@@ -29,6 +25,16 @@ showcase--no-description
     --showcase-gap:20px;
 
     --showcase-padding:28px;
+
+    --showcase-expanded:3.5;
+
+    --showcase-height:560px;
+
+    --showcase-mobile-height:360px;
+
+    --showcase-image:380px;
+
+    --showcase-image-active:430px;
 
     display:flex;
 
@@ -62,13 +68,13 @@ showcase--no-description
 
     --showcase-expanded:2.2;
 
-    --showcase-height:430px;
+    --showcase-height:270px;
 
-    --showcase-mobile-height:240px;
+    --showcase-mobile-height:220px;
 
-    --showcase-image:180px;
+    --showcase-image:150px;
 
-    --showcase-image-active:220px;
+    --showcase-image-active:180px;
 
 }
 
@@ -190,6 +196,8 @@ showcase--no-description
 
     color:var(--navy);
 
+    opacity:1;
+
     transition:
 
         opacity .18s ease,
@@ -243,7 +251,6 @@ showcase--no-description
 =================================== */
 
 .showcase-title-full,
-
 .showcase-description{
 
     opacity:0;
@@ -251,12 +258,6 @@ showcase--no-description
     visibility:hidden;
 
     transform:translateY(8px);
-
-}
-
-.showcase-title-short{
-
-    opacity:1;
 
 }
 
@@ -273,7 +274,6 @@ showcase--no-description
 }
 
 .showcase-item--content-visible .showcase-title-full,
-
 .showcase-item--content-visible .showcase-description{
 
     opacity:1;
@@ -319,7 +319,7 @@ showcase--no-description
 }
 
 /* ===================================
-   HOVER
+   DESKTOP HOVER
 =================================== */
 
 @media (min-width:768px){
@@ -331,6 +331,7 @@ showcase--no-description
     }
 
 }
+
 /* ===================================
    PHONE
 =================================== */
@@ -347,7 +348,9 @@ showcase--no-description
 
     }
 
-    /* ---------- Panels ---------- */
+    /* ===================================
+       PANEL
+    =================================== */
 
     .showcase-item{
 
@@ -362,13 +365,9 @@ showcase--no-description
         align-items:center;
 
         background:linear-gradient(
-
             135deg,
-
             rgba(108,123,255,.18),
-
             rgba(124,201,165,.18)
-
         );
 
     }
@@ -383,51 +382,35 @@ showcase--no-description
 
     }
 
-    /* ---------- Closed Card ---------- */
+    /* ===================================
+       IMAGE
+    =================================== */
+
+    .showcase-media{
+
+        position:absolute;
+
+        top:0;
+
+        left:0;
+
+        right:0;
+
+        bottom:90px;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        padding:20px;
+
+    }
 
     .showcase-item:not(.showcase-item--active) .showcase-media{
 
         display:none;
-
-    }
-
-    .showcase-item:not(.showcase-item--active) .showcase-description{
-
-        display:none;
-
-    }
-
-    .showcase-item:not(.showcase-item--active) .showcase-title-short{
-
-        position:relative;
-
-        left:auto;
-
-        right:auto;
-
-        bottom:auto;
-
-        margin:0;
-
-        text-align:center;
-
-        opacity:1;
-
-        transform:none;
-
-    }
-
-    /* ---------- Active Card ---------- */
-
-    .showcase-item--active .showcase-title-short{
-
-        display:none;
-
-    }
-
-    .showcase-item--active .showcase-media{
-
-        padding-top:20px;
 
     }
 
@@ -439,23 +422,61 @@ showcase--no-description
 
     }
 
+    /* ===================================
+       TITLE
+    =================================== */
+
+    .showcase-title-short{
+
+        display:none;
+
+    }
+
     .showcase-content{
 
-        left:22px;
+        position:absolute;
 
-        right:22px;
+        left:0;
+
+        right:0;
 
         bottom:24px;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        text-align:center;
 
     }
 
     .showcase-title-full{
 
-        font-size:1.55rem;
+        display:block;
 
-        line-height:1.2;
+        margin:0;
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:none;
+
+        font-size:2rem;
+
+        font-weight:700;
+
+        line-height:1.15;
+
+        text-align:center;
 
     }
+
+    /* ===================================
+       DESCRIPTION
+    =================================== */
 
     .showcase-description{
 
@@ -465,33 +486,29 @@ showcase--no-description
 
 }
 
+
 /* ===================================
    COMPONENT NOTES
 =================================== */
 
 /*
 
-This component is completely reusable.
+Reusable showcase component.
 
-Supported variants
+Variants:
 
 showcase--large
-
 showcase--compact
-
 showcase--navigation
-
 showcase--static
-
 showcase--no-description
 
-Typical usage
+Desktop:
+- Hover expands cards.
 
-<div class="showcase showcase--large">
-
-<div class="showcase showcase--compact showcase--navigation">
-
-Future variants can be added without
-modifying page-specific CSS.
+Phone:
+- Closed card ? title only.
+- Active card ? image + title.
+- Same title size in both states.
 
 */
