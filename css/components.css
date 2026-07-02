@@ -10,6 +10,9 @@ Variants
 
 showcase--large
 showcase--compact
+showcase--services
+showcase--roadmap
+showcase--details
 showcase--navigation
 showcase--static
 showcase--no-description
@@ -35,6 +38,8 @@ showcase--no-description
     --showcase-image:380px;
 
     --showcase-image-active:430px;
+
+    --showcase-media-bottom:145px;
 
     display:flex;
 
@@ -75,6 +80,23 @@ showcase--no-description
     --showcase-image:150px;
 
     --showcase-image-active:180px;
+
+}
+
+.showcase--services,
+.showcase--roadmap{
+
+    --showcase-expanded:3.2;
+
+    --showcase-height:500px;
+
+    --showcase-mobile-height:390px;
+
+    --showcase-image:130px;
+
+    --showcase-image-active:190px;
+
+    --showcase-media-bottom:205px;
 
 }
 
@@ -132,7 +154,7 @@ showcase--no-description
 
     inset:0;
 
-    bottom:145px;
+    bottom:var(--showcase-media-bottom);
 
     display:flex;
 
@@ -243,6 +265,30 @@ showcase--no-description
     color:var(--text-soft);
 
     line-height:1.7;
+
+}
+
+.showcase--details .showcase-description ul{
+
+    margin:0;
+
+    padding-left:20px;
+
+}
+
+.showcase--details .showcase-description li{
+
+    color:var(--text-soft);
+
+    line-height:1.65;
+
+    margin-bottom:6px;
+
+}
+
+.showcase--details .showcase-title-full{
+
+    font-size:1.55rem;
 
 }
 
@@ -542,6 +588,48 @@ showcase--no-description
 
     }
 
+    .showcase--details .showcase-item--active{
+
+        height:var(--showcase-mobile-height);
+
+    }
+
+    .showcase--details .showcase-media{
+
+        bottom:160px;
+
+    }
+
+    .showcase--details .showcase-description{
+
+        display:block;
+
+        margin-top:14px;
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:none;
+
+        text-align:left;
+
+    }
+
+    .showcase--details .showcase-description ul{
+
+        padding-left:18px;
+
+    }
+
+    .showcase--details .showcase-description li{
+
+        line-height:1.55;
+
+        margin-bottom:4px;
+
+    }
+
     .showcase-action{
 
         width:44px;
@@ -569,6 +657,9 @@ Variants:
 
 showcase--large
 showcase--compact
+showcase--services
+showcase--roadmap
+showcase--details
 showcase--navigation
 showcase--static
 showcase--no-description
