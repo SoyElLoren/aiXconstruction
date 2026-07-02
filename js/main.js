@@ -1,4 +1,3 @@
-
 function loadComponent(id, file){
 
     fetch(file)
@@ -17,53 +16,15 @@ function loadComponent(id, file){
 
         .then(data => {
 
-            document.getElementById(id).innerHTML = data;
+            const target = document.getElementById(id);
+
+            if(!target) return;
+
+            target.innerHTML = data;
 
             if(id === "navbar"){
 
-                const toggle = document.getElementById("mobileToggle");
-                const menu = document.getElementById("mobileMenu");
-
-                if(toggle && menu){
-
-                    toggle.addEventListener("click", () => {
-
-                        menu.classList.toggle("active");
-
-                        toggle.innerHTML = menu.classList.contains("active")
-                            ? "&times;"
-                            : "&#9776;";
-
-                    });
-
-                    menu.querySelectorAll("a").forEach(link => {
-
-                        link.addEventListener("click", () => {
-
-                            menu.classList.remove("active");
-
-                            toggle.innerHTML = "&#9776;";
-
-                        });
-
-                    });
-
-                    document.addEventListener("click", (event) => {
-
-                        if(
-                            !menu.contains(event.target) &&
-                            !toggle.contains(event.target)
-                        ){
-
-                            menu.classList.remove("active");
-
-                            toggle.innerHTML = "&#9776;";
-
-                        }
-
-                    });
-
-                }
+                initNavbar();
 
             }
 
@@ -77,151 +38,137 @@ function loadComponent(id, file){
 
 }
 
-loadComponent("navbar", "components/navbar.html");
-loadComponent("footer", "components/footer.html");
+function initNavbar(){
 
+    setActiveNavigation();
+    setActiveLanguage();
+    initMobileMenu();
 
-function loadComponent(id, file){
+}
 
-    fetch(file)
+function setActiveNavigation(){
 
-        .then(response => {
+    const currentPage = getCurrentPage();
+    const links = document.querySelectorAll(".navbar-links a");
 
-            if(!response.ok){
+    links.forEach(link => {
 
-                throw new Error(file);
+        const linkPage = getPageFromHref(link.getAttribute("href"));
 
-            }
+        if(linkPage === currentPage){
 
-            return response.text();
+            link.classList.add("active-page");
+            link.setAttribute("aria-current", "page");
 
-        })
+        }
 
-        .then(data => {
+    });
 
-            document.getElementById(id).innerHTML = data;
+}
 
-            if(id === "navbar"){
+function getCurrentPage(){
 
-                const toggle = document.getElementById("mobileToggle");
-                const menu = document.getElementById("mobileMenu");
+    const page = window.location.pathname.split("/").pop();
 
-                if(toggle && menu){
+    return page || "index.html";
 
-                    toggle.addEventListener("click", () => {
+}
 
-                        menu.classList.toggle("active");
+function getPageFromHref(href){
 
-                        toggle.innerHTML = menu.classList.contains("active")
-                            ? "&times;"
-                            : "&#9776;";
+    if(!href) return "";
 
-                    });
+    return href.split("#")[0];
 
-                    menu.querySelectorAll("a").forEach(link => {
+}
 
-                        link.addEventListener("click", () => {
+function setActiveLanguage(){
 
-                            menu.classList.remove("active");
+    document.querySelectorAll(".lang").forEach(button => {
 
-                            toggle.innerHTML = "&#9776;";
+        button.setAttribute(
+            "aria-pressed",
+            button.classList.contains("active") ? "true" : "false"
+        );
 
-                        });
+    });
 
-                    });
+}
 
-                    document.addEventListener("click", (event) => {
+function initMobileMenu(){
 
-                        if(
-                            !menu.contains(event.target) &&
-                            !toggle.contains(event.target)
-                        ){
+    const toggle = document.getElementById("mobileToggle");
+    const menu = document.getElementById("mobileMenu");
+    const icon = toggle ? toggle.querySelector("span") : null;
 
-                            menu.classList.remove("active");
+    if(!toggle || !menu || !icon) return;
 
-                            toggle.innerHTML = "&#9776;";
+    const closeMenu = () => {
 
-                        }
+        menu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+        icon.innerHTML = "&#9776;";
 
-                    });
+    };
 
-                }
+    const openMenu = () => {
 
-            }
+        menu.classList.add("active");
+        document.body.classList.add("menu-open");
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Close menu");
+        icon.innerHTML = "&times;";
 
-        })
+    };
 
-        .catch(error => {
+    toggle.addEventListener("click", () => {
 
-            console.error("Component could not be loaded:", error);
+        if(menu.classList.contains("active")){
 
-        });
+            closeMenu();
+
+            return;
+
+        }
+
+        openMenu();
+
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", closeMenu);
+
+    });
+
+    document.addEventListener("keydown", event => {
+
+        if(event.key === "Escape"){
+
+            closeMenu();
+            toggle.focus();
+
+        }
+
+    });
+
+    document.addEventListener("click", event => {
+
+        if(
+            menu.classList.contains("active") &&
+            !menu.contains(event.target) &&
+            !toggle.contains(event.target)
+        ){
+
+            closeMenu();
+
+        }
+
+    });
 
 }
 
 loadComponent("navbar", "components/navbar.html");
 loadComponent("footer", "components/footer.html");
-
-
-/* ===================================
-   WHO WE HELP CAROUSEL
-=================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const grid = document.querySelector(".who-we-help-grid");
-    const cards = document.querySelectorAll(".who-card");
-    const dots = document.querySelectorAll(".who-dots .dot");
-
-    if (!grid || cards.length === 0 || dots.length === 0) {
-        return;
-    }
-
-    function updateDots() {
-
-        let activeIndex = 0;
-        let minDistance = Infinity;
-
-        cards.forEach((card, index) => {
-
-            const distance = Math.abs(card.offsetLeft - grid.scrollLeft);
-
-            if (distance < minDistance) {
-
-                minDistance = distance;
-                activeIndex = index;
-
-            }
-
-        });
-
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[activeIndex].classList.add("active");
-
-    }
-
-    dots.forEach((dot, index) => {
-
-        dot.addEventListener("click", () => {
-
-            grid.scrollTo({
-
-                left: cards[index].offsetLeft,
-
-                behavior: "smooth"
-
-            });
-
-        });
-
-    });
-
-    grid.addEventListener("scroll", () => {
-
-        window.requestAnimationFrame(updateDots);
-
-    });
-
-    updateDots();
-
-});

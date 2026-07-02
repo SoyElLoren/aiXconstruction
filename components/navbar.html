@@ -11,21 +11,21 @@
 
         </a>
 
-        <div class="navbar-center">
+        <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="mobileMenu"
+            aria-expanded="false">
 
-            <div class="language-switcher">
+            <span aria-hidden="true">&#9776;</span>
 
-                <button class="lang active">EN</button>
-                <button class="lang">DE</button>
-                <button class="lang">ES</button>
+        </button>
 
-            </div>
+        <div class="navbar-menu" id="mobileMenu">
 
-        </div>
-
-        <div class="navbar-desktop">
-
-            <nav class="navbar-links">
+            <nav class="navbar-links" aria-label="Main navigation">
 
                 <a href="index.html">
                     Home
@@ -35,57 +35,24 @@
                     Services
                 </a>
 
-                <a href="roadmap.html">
-                    Our Roadmap
+                <a href="contact.html" class="contact-btn">
+                    Contact
                 </a>
 
             </nav>
 
-            <a href="contact.html" class="contact-btn">
+            <div class="mobile-menu-divider" aria-hidden="true"></div>
 
-                Contact
+            <div class="language-switcher" aria-label="Language selector">
 
-            </a>
+                <button class="lang active" type="button">EN</button>
+                <button class="lang" type="button">DE</button>
+                <button class="lang" type="button">ES</button>
+
+            </div>
 
         </div>
-
-        <button
-            class="mobile-toggle"
-            id="mobileToggle"
-            aria-label="Open menu">
-
-            &#9776;
-
-        </button>
 
     </div>
 
 </header>
-
-<div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html">
-        Home
-    </a>
-
-    <a href="services.html">
-        Services
-    </a>
-
-    <a href="roadmap.html">
-        Our Roadmap
-    </a>
-
-    <a href="contact.html">
-        Contact
-    </a>
-
-    <div class="language-switcher">
-
-        <button class="lang active">EN</button>
-        <button class="lang">DE</button>
-        <button class="lang">ES</button>
-
-    </div>
-
-</div>
