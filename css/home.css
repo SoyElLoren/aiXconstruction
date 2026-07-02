@@ -320,8 +320,6 @@
 
     padding:30px;
 
-    text-decoration:none;
-
     color:inherit;
 
     border-radius:var(--card-radius);
@@ -335,15 +333,6 @@
     transition:
         transform .25s ease,
         box-shadow .25s ease;
-
-}
-
-.contact-card:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 18px 40px rgba(11,16,38,.10);
 
 }
 
@@ -393,17 +382,47 @@
 
     margin-top:18px;
 
-    font-size:1.7rem;
+    width:54px;
+
+    height:54px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-size:2rem;
+
+    line-height:1;
 
     color:var(--navy);
 
-    transition:transform .25s ease;
+    background:rgba(255,255,255,.55);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
 
 }
 
-.contact-card:hover .contact-arrow{
+.contact-arrow:hover,
+.contact-arrow:focus-visible{
 
     transform:translateX(8px);
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+    );
 
 }
 
@@ -412,6 +431,74 @@
 =================================== */
 
 @media (max-width:767px){
+
+    .hero{
+
+        padding:38px 0 52px;
+
+    }
+
+    .hero-layout{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:26px;
+
+    }
+
+    .hero-content{
+
+        max-width:none;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2.55rem;
+
+        margin-bottom:18px;
+
+    }
+
+    .hero-subtitle{
+
+        margin-bottom:0;
+
+    }
+
+    .hero-features{
+
+        display:none;
+
+    }
+
+    .hero-image{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .hero-image::before{
+
+        width:100%;
+
+        height:100%;
+
+        right:auto;
+
+        top:8%;
+
+    }
+
+    .hero-image img{
+
+        max-width:360px;
+
+    }
 
     .explore-layout{
 
@@ -426,6 +513,12 @@
     .showcase--compact{
 
         width:100%;
+
+    }
+
+    .showcase--compact .showcase-title-full{
+
+        font-size:1.25rem;
 
     }
 
@@ -468,6 +561,16 @@
     .contact-card h3{
 
         font-size:1.45rem;
+
+    }
+
+    .contact-arrow{
+
+        width:58px;
+
+        height:58px;
+
+        font-size:2.15rem;
 
     }
 

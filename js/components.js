@@ -111,22 +111,6 @@ function registerEvents(showcase, items, mode) {
 
             });
 
-            if (mode === "navigation") {
-
-                item.addEventListener("click", e => {
-
-                    const link = item.getAttribute("href");
-
-                    if (!link) return;
-
-                    e.preventDefault();
-
-                    window.location.href = link;
-
-                });
-
-            }
-
         }
 
         else {

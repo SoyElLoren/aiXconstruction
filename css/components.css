@@ -251,7 +251,8 @@ showcase--no-description
 =================================== */
 
 .showcase-title-full,
-.showcase-description{
+.showcase-description,
+.showcase-action{
 
     opacity:0;
 
@@ -274,7 +275,8 @@ showcase--no-description
 }
 
 .showcase-item--content-visible .showcase-title-full,
-.showcase-item--content-visible .showcase-description{
+.showcase-item--content-visible .showcase-description,
+.showcase-item--content-visible .showcase-action{
 
     opacity:1;
 
@@ -315,6 +317,54 @@ showcase--no-description
 .showcase--no-description .showcase-description{
 
     display:none;
+
+}
+
+.showcase-action{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:46px;
+
+    height:46px;
+
+    margin-top:18px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-size:1.7rem;
+
+    line-height:1;
+
+    color:var(--navy);
+
+    background:rgba(108,123,255,.10);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+
+}
+
+.showcase-action:hover,
+.showcase-action:focus-visible{
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+    );
+
+    transform:translateX(4px);
 
 }
 
@@ -436,13 +486,15 @@ showcase--no-description
 
         position:absolute;
 
-        left:0;
+        left:22px;
 
-        right:0;
+        right:22px;
 
-        bottom:24px;
+        bottom:22px;
 
         display:flex;
+
+        flex-direction:column;
 
         justify-content:center;
 
@@ -464,13 +516,19 @@ showcase--no-description
 
         transform:none;
 
-        font-size:2rem;
+        font-size:1.25rem;
 
-        font-weight:700;
+        font-weight:800;
 
-        line-height:1.15;
+        line-height:1.2;
 
         text-align:center;
+
+    }
+
+    .showcase-item:not(.showcase-item--active) .showcase-action{
+
+        display:none;
 
     }
 
@@ -481,6 +539,18 @@ showcase--no-description
     .showcase-description{
 
         display:none;
+
+    }
+
+    .showcase-action{
+
+        width:44px;
+
+        height:44px;
+
+        margin-top:14px;
+
+        font-size:1.65rem;
 
     }
 
