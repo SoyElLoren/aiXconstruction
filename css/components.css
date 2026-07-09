@@ -934,7 +934,7 @@ showcase--no-description
 
     }
 
-    .showcase--details .showcase-description{
+    .showcase--details .showcase-item--active .showcase-description{
 
         display:block;
 
@@ -947,6 +947,12 @@ showcase--no-description
         transform:none;
 
         text-align:left;
+
+    }
+
+    .showcase--details .showcase-item:not(.showcase-item--active) .showcase-description{
+
+        display:none;
 
     }
 
