@@ -41,6 +41,7 @@ function loadComponent(id, file){
 function initNavbar(){
 
     setActiveNavigation();
+    setLanguageLinks();
     setActiveLanguage();
     initMobileMenu();
 
@@ -86,10 +87,42 @@ function setActiveLanguage(){
 
     document.querySelectorAll(".lang").forEach(button => {
 
-        button.setAttribute(
-            "aria-pressed",
-            button.classList.contains("active") ? "true" : "false"
-        );
+        const active = button.classList.contains("active");
+
+        if(button.tagName === "A"){
+
+            if(active){
+
+                button.setAttribute("aria-current", "true");
+
+            }
+
+            return;
+
+        }
+
+        button.setAttribute("aria-pressed", active ? "true" : "false");
+
+    });
+
+}
+
+function setLanguageLinks(){
+
+    const page = getCurrentPage();
+    const isGerman = window.location.pathname.includes("/de/");
+    const englishHref = isGerman ? `../${page}` : page;
+    const germanHref = isGerman ? page : `de/${page}`;
+
+    document.querySelectorAll("[data-lang='en']").forEach(link => {
+
+        link.setAttribute("href", englishHref);
+
+    });
+
+    document.querySelectorAll("[data-lang='de']").forEach(link => {
+
+        link.setAttribute("href", germanHref);
 
     });
 
@@ -103,12 +136,17 @@ function initMobileMenu(){
 
     if(!toggle || !menu || !icon) return;
 
+    const openLabel = toggle.getAttribute("aria-label") || "Open menu";
+    const closeLabel = document.documentElement.lang === "de" ?
+        "Menü schließen" :
+        "Close menu";
+
     const closeMenu = () => {
 
         menu.classList.remove("active");
         document.body.classList.remove("menu-open");
         toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
+        toggle.setAttribute("aria-label", openLabel);
         icon.innerHTML = "&#9776;";
 
     };
@@ -118,7 +156,7 @@ function initMobileMenu(){
         menu.classList.add("active");
         document.body.classList.add("menu-open");
         toggle.setAttribute("aria-expanded", "true");
-        toggle.setAttribute("aria-label", "Close menu");
+        toggle.setAttribute("aria-label", closeLabel);
         icon.innerHTML = "&times;";
 
     };
