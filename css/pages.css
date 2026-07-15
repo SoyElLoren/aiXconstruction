@@ -178,6 +178,19 @@
 
         min-height:auto;
 
+        padding:22px;
+
+    }
+
+    .info-card img{
+        width:125px;
+        height:125px;
+        margin-bottom:12px;
+    }
+
+    .info-card h3{
+        font-size:clamp(1.05rem, 5vw, 1.2rem);
+        margin-bottom:12px;
     }
 
 }

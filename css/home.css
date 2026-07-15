@@ -269,7 +269,7 @@
 
     .showcase--who-help{
 
-        --showcase-mobile-height:430px;
+        --showcase-mobile-height:330px;
 
     }
 
@@ -309,15 +309,19 @@
 
         height:auto;
 
-        gap:18px;
+        gap:10px;
 
-        padding:28px;
+        padding:22px 24px;
+
+        min-height:310px;
+
+        text-decoration:none;
 
     }
 
     .contact-card-image{
 
-        width:120px;
+        width:96px;
 
     }
 
@@ -333,15 +337,15 @@
 
     .contact-card h3{
 
-        font-size:1.45rem;
+        font-size:clamp(1.25rem, 6vw, 1.4rem);
 
     }
 
     .contact-arrow{
 
-        width:58px;
+        width:50px;
 
-        height:58px;
+        height:50px;
 
         font-size:2.15rem;
 
