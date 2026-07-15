@@ -30,10 +30,10 @@
 
     Project rules
 
-    • Phone
+    - Phone
     Mobile layout
 
-    • Desktop
+    - Desktop
     Desktop layout
 
     Never create additional breakpoints
@@ -174,4 +174,11 @@ p{
 
     padding-inline:var(--container-padding);
 
+}
+
+@media (max-width:767px){
+    body,
+    p{
+        line-height:1.45;
+    }
 }

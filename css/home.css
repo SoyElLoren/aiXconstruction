@@ -267,9 +267,23 @@
 
     }
 
+    .who-we-help-section .section-header{
+
+        margin-bottom:28px;
+
+    }
+
+    .who-we-help-section .section-header p{
+
+        margin-top:8px;
+
+        line-height:1.45;
+
+    }
+
     .showcase--who-help{
 
-        --showcase-mobile-height:330px;
+        --showcase-mobile-height:315px;
 
     }
 
@@ -291,7 +305,7 @@
 
     .showcase--compact .showcase-title-full{
 
-        font-size:1.25rem;
+        font-size:1.12rem;
 
     }
 
