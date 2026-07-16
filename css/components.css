@@ -228,7 +228,7 @@
 
 }
 
-@media (max-width:767px){
+@media (max-width:767px), (orientation:landscape) and (max-height:600px) and (pointer:coarse){
 
     .hero{
 
@@ -269,12 +269,7 @@
     }
 
     .hero-features{
-
-        width:100%;
-
-        flex-direction:column;
-
-        gap:16px;
+        display:none;
 
     }
 
@@ -553,7 +548,7 @@ showcase--no-description
 
     text-align:center;
 
-    font-size:1.15rem;
+    font-size:.98rem;
 
     font-weight:700;
 
@@ -591,7 +586,7 @@ showcase--no-description
 
     margin:0;
 
-    font-size:2rem;
+    font-size:1.72rem;
 
     font-weight:700;
 
@@ -631,7 +626,7 @@ showcase--no-description
 
 .showcase--details .showcase-title-full{
 
-    font-size:1.55rem;
+    font-size:1.38rem;
 
 }
 
@@ -761,7 +756,7 @@ showcase--no-description
    DESKTOP HOVER
 =================================== */
 
-@media (min-width:768px){
+@media (min-width:768px) and (min-height:601px), (min-width:768px) and (pointer:fine){
 
     .showcase-item:not(.showcase-item--active):hover{
 
@@ -775,7 +770,7 @@ showcase--no-description
    PHONE
 =================================== */
 
-@media (max-width:767px){
+@media (max-width:767px), (orientation:landscape) and (max-height:600px) and (pointer:coarse){
 
     .showcase{
 
@@ -905,7 +900,7 @@ showcase--no-description
 
         transform:none;
 
-        font-size:clamp(1.05rem, 4.7vw, 1.2rem);
+        font-size:.7rem;
 
         font-weight:800;
 
@@ -923,7 +918,7 @@ showcase--no-description
 
     .showcase-item--active .showcase-title-full{
 
-        font-size:clamp(.96rem, 4.15vw, 1.05rem);
+        font-size:.7rem;
 
         line-height:1.16;
 
@@ -1003,7 +998,7 @@ showcase--no-description
 
 }
 
-@media (max-width:767px){
+@media (max-width:767px), (orientation:landscape) and (max-height:600px) and (pointer:coarse){
     .showcase--services,
     .showcase--roadmap{
         --showcase-mobile-height:310px;

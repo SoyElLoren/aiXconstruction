@@ -10,6 +10,10 @@ function initShowcase() {
 
 }
 
+const mobileExperience = window.matchMedia(
+    "(max-width: 767px), (orientation: landscape) and (max-height: 600px) and (pointer: coarse)"
+);
+
 /* ===================================
    SINGLE SHOWCASE
 =================================== */
@@ -22,15 +26,30 @@ function initSingleShowcase(showcase) {
 
     const mode = showcase.dataset.mode || "expand";
 
-    const initial =
+    const initial = showcase.querySelector(".showcase-item--active") || items[0];
 
-        showcase.querySelector(".showcase-item--active") ||
+    if (mobileExperience.matches) {
 
-        items[0];
+        clearActive(items);
 
-    setActive(initial, items);
+    }
+
+    else {
+
+        setActive(initial, items);
+
+    }
 
     registerEvents(showcase, items, mode);
+
+}
+
+function clearActive(items) {
+
+    items.forEach(panel => panel.classList.remove(
+        "showcase-item--active",
+        "showcase-item--content-visible"
+    ));
 
 }
 
@@ -71,7 +90,7 @@ function setActive(item, items) {
 
         );
 
-        if (window.innerWidth <= 767) {
+        if (mobileExperience.matches) {
 
             item.scrollIntoView({
 
@@ -93,7 +112,7 @@ function setActive(item, items) {
 
 function registerEvents(showcase, items, mode) {
 
-    const desktop = window.innerWidth >= 768;
+    const desktop = !mobileExperience.matches;
 
     items.forEach(item => {
 
@@ -135,11 +154,14 @@ function registerEvents(showcase, items, mode) {
 
                 }
 
-                if (mode === "navigation") {
+                if (e.target.closest("a")) {
 
                     return;
 
                 }
+
+                e.preventDefault();
+                clearActive(items);
 
             });
 
