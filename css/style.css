@@ -181,4 +181,10 @@ p{
     p{
         line-height:1.45;
     }
+
+    .who-we-help-section .section-header p,
+    .services-section .section-header p,
+    .roadmap-section .section-header p{
+        display:none;
+    }
 }

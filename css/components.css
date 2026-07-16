@@ -379,6 +379,8 @@ showcase--no-description
 
     --showcase-media-bottom:145px;
 
+    --showcase-title-size:1.15rem;
+
     display:flex;
 
     gap:var(--showcase-gap);
@@ -548,7 +550,7 @@ showcase--no-description
 
     text-align:center;
 
-    font-size:.98rem;
+    font-size:var(--showcase-title-size);
 
     font-weight:700;
 
@@ -586,7 +588,7 @@ showcase--no-description
 
     margin:0;
 
-    font-size:1.72rem;
+    font-size:var(--showcase-title-size);
 
     font-weight:700;
 
@@ -626,7 +628,7 @@ showcase--no-description
 
 .showcase--details .showcase-title-full{
 
-    font-size:1.38rem;
+    font-size:var(--showcase-title-size);
 
 }
 
@@ -888,7 +890,8 @@ showcase--no-description
 
     }
 
-    .showcase-title-full{
+    .showcase-title-full,
+    .showcase--details .showcase-title-full{
 
         display:block;
 
@@ -900,7 +903,7 @@ showcase--no-description
 
         transform:none;
 
-        font-size:.7rem;
+        font-size:var(--showcase-title-size);
 
         font-weight:800;
 
@@ -916,9 +919,10 @@ showcase--no-description
 
     }
 
-    .showcase-item--active .showcase-title-full{
+    .showcase-item--active .showcase-title-full,
+    .showcase--details .showcase-item--active .showcase-title-full{
 
-        font-size:.7rem;
+        font-size:var(--showcase-title-size);
 
         line-height:1.16;
 
